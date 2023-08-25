@@ -41,7 +41,7 @@ public class Main {
         String result = sb.toString();
         System.out.println(result);
     }
-    public void initialize(){
+    protected void initialize(){
         System.out.println("初始化中");
         actions=new ArrayList<>();
         scanner=new Scanner(System.in);
@@ -49,16 +49,17 @@ public class Main {
         this.outPut("成功加载全局变量","OK");
         this.actions.add(new ListAction(actions));
         this.actions.add(new QuitAction(scanner,globalState));
-        this.actions.add(new LoginAction(scanner));
+        this.actions.add(new LoginAction(scanner,globalState));
+        this.actions.add(new LogoutAction(globalState));
         this.outPut("操作加载完成","OK");
     }
 
-    public void run(){
+    protected void run(){
         boolean found=false;
         System.out.println("程序运行中...");
         System.out.println("欢迎您使用本程序");
         System.out.println("请输入LIST来获取可以执行的操作");
-        while(globalState.isRuning){
+        while(this.globalState.isRuning()){
             System.out.print(">");
             String antionName=scanner.nextLine();
             for(AbstractAction action:actions){
@@ -72,7 +73,7 @@ public class Main {
                 System.out.println("没有找到可以执行的功能");
         }
     }
-    public void free(){
+    protected void free(){
         System.out.println("释放资源中...");
         if (this.scanner != null) {
             this.scanner.close();
