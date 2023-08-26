@@ -2,9 +2,9 @@ package com.mic.tech;
 
 abstract class AbstractAction {
 
-    abstract String getDescription();
-    abstract String getActionName();
-    abstract void run();
+    public abstract String getDescription();
+    public abstract String getActionName();
+    public abstract void run();
     public void println(Object s) {
         System.out.println(this.getActionName().toUpperCase() + "> " + s);
     }

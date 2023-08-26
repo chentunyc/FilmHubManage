@@ -2,19 +2,22 @@ package com.mic.tech;
 import java.util.Scanner;
 import com.mic.tech.AbstractAuthenticatedAction.Role;
 public class LoginAction extends AbstractAction{
-    Scanner scanner=null;
-    GlobalState state=null;
-    LoginAction(Scanner scanner,GlobalState state){
+    private Scanner scanner=null;
+    private GlobalState state=null;
+    private UserService userService=null;
+
+    LoginAction(Scanner scanner,GlobalState state,UserService userService){
         this.scanner=scanner;
         this.state=state;
+        this.userService=userService;
     }
-    String getActionName(){
+    public String getActionName(){
         return "LOGIN";
     }
-    String getDescription(){
+    public String getDescription(){
         return "你可以登录你的账号";
     }
-    void run() {
+    public void run() {
         System.out.println("请输入用户名");
         String userName=scanner.nextLine();
         System.out.println("请输入密码");
@@ -31,8 +34,12 @@ public class LoginAction extends AbstractAction{
         }
     }
     private Role login(String userName,String password){
+        User user = this.userService.getUserByUserName(userName);
         if(userName.equals("admin")&&password.equals("ynuinfo#777")) {
             return Role.ADMINISTRATOR;
+        }
+        else if (user != null && user.getPassword().equals(password)) {
+            return user.getRole();
         }
         else{
             return null;

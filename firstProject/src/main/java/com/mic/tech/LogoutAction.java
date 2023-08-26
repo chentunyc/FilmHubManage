@@ -1,17 +1,16 @@
 package com.mic.tech;
-import com.mic.tech.AbstractAuthenticatedAction.Role;
-public class LogoutAction extends AbstractAction{
+public class LogoutAction extends AbstractAuthenticatedAction{
     LogoutAction(GlobalState state){
         this.state=state;
     }
     GlobalState state=null;
-    String getActionName(){
+    public String getActionName(){
         return "LOGOUT";
     }
-    String getDescription(){
+    public String getDescription(){
         return "你可以退出账号";
     }
-    void run(){
+    public void perform(){
             state.setUserName(null);
             state.setRole(null);
             state.setIsAuthenticated(false);

@@ -7,6 +7,7 @@ public class Main {
     private List <AbstractAction> actions= null;
     private Scanner scanner=null;
     private GlobalState globalState=null;
+    private UserService userService=null;
     public static void main(String[]args){
         Main app=new Main();
         app.initialize();
@@ -47,9 +48,11 @@ public class Main {
         scanner=new Scanner(System.in);
         globalState=new GlobalState();
         this.outPut("成功加载全局变量","OK");
+        userService=new UserService();
+        this.outPut("用户服务模块加载完成","OK");
         this.actions.add(new ListAction(actions));
         this.actions.add(new QuitAction(scanner,globalState));
-        this.actions.add(new LoginAction(scanner,globalState));
+        this.actions.add(new LoginAction(scanner,globalState,userService));
         this.actions.add(new LogoutAction(globalState));
         this.outPut("操作加载完成","OK");
     }

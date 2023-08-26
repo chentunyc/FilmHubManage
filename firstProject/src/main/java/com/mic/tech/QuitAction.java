@@ -9,13 +9,13 @@ public class QuitAction extends AbstractAction{
         this.scanner=scanner;
         this.globalState=globalState;
     }
-    String getActionName(){
+    public String getActionName(){
         return "QUIT";
     }
-    String getDescription(){
+    public String getDescription(){
         return "你可以退出程序";
     }
-    void run(){
+    public void run(){
         super.println("请输入y/n来决定是否退出程序");
         String answer=scanner.nextLine();
         if(answer.equals("y"))

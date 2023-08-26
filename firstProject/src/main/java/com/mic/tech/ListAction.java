@@ -7,13 +7,13 @@ public class ListAction extends AbstractAction{
     ListAction(List <AbstractAction> list){
         this.list=list;
     }
-    String getActionName(){
+    public String getActionName(){
         return "LIST";
     }
-    String getDescription() {
+    public String getDescription() {
         return "列出可执行的操作";
     }
-    void run() {
+    public void run() {
         for(AbstractAction lst:this.list){
             String name= lst.getActionName();
             String description=lst.getDescription();
