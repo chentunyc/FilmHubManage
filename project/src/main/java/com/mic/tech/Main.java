@@ -8,6 +8,8 @@ public class Main {
     private Scanner scanner=null;
     private GlobalState globalState=null;
     private UserService userService=null;
+    private FilmService filmService=null;
+    private PlatService platService=null;
     public static void main(String[]args){
         Main app=new Main();
         app.initialize();
@@ -43,18 +45,41 @@ public class Main {
         System.out.println(result);
     }
     protected void initialize(){
-        System.out.println("初始化中");
+        System.out.println("初始化中...");
         actions=new ArrayList<>();
         scanner=new Scanner(System.in);
         globalState=new GlobalState();
-        this.outPut("成功加载全局变量","OK");
+        this.outPut("加载全局变量完成","成功");
         userService=new UserService();
-        this.outPut("用户服务模块加载完成","OK");
+        filmService=new FilmService();
+        platService=new PlatService();
+        this.outPut("服务模块加载完成","成功");
         this.actions.add(new ListAction(actions));
         this.actions.add(new QuitAction(scanner,globalState));
         this.actions.add(new LoginAction(scanner,globalState,userService));
         this.actions.add(new LogoutAction(globalState));
-        this.outPut("操作加载完成","OK");
+        this.outPut("基本操作加载完成","成功");
+        this.actions.add(new ListAllUserAction(globalState,userService));
+        this.actions.add(new ListUserAction(globalState,userService,scanner));
+        this.actions.add(new ChangeUserRoleAction(userService,globalState,scanner));
+        this.actions.add(new ChangeUserPasswordAction(userService,globalState,scanner));
+        this.actions.add(new ChangeUserEmailAction(userService,globalState,scanner));
+        this.actions.add(new ChangeUserTelephoneNumberAction(userService,globalState,scanner));
+        this.actions.add(new DeleteUserAction(globalState,userService,scanner));
+        this.outPut("管理操作加载完成","成功");
+        this.actions.add(new CustomerRegisterAction(globalState,userService,scanner));
+        this.outPut("顾客操作加载完成","成功");
+        this.actions.add(new ListAllFilmAction(globalState,filmService));
+        this.actions.add(new ListFilmAction(globalState,filmService,scanner));
+        this.actions.add(new ChangeFilmAction(globalState,filmService,scanner));
+        this.actions.add(new DeleteFilmAction(globalState,filmService,scanner));
+        this.actions.add(new FilmAddAction(globalState,filmService,scanner));
+        this.outPut("影片操作加载完成","成功");
+        this.actions.add(new PlatAddAction(globalState,filmService,platService,scanner));
+        this.actions.add(new ChangePlatAction(globalState,filmService,platService,scanner));
+        this.actions.add(new DeletePlatAction(globalState,platService,scanner));
+        this.actions.add(new LIstAllPlatAction(globalState,platService));
+        this.outPut("排片操作加载完成","成功");
     }
 
     protected void run(){

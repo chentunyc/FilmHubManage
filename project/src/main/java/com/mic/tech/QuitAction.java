@@ -16,7 +16,7 @@ public class QuitAction extends AbstractAction{
         return "你可以退出程序";
     }
     public void run(){
-        super.println("请输入y/n来决定是否退出程序");
+        super.print("请输入y/n来决定是否退出程序");
         String answer=scanner.nextLine();
         if(answer.equals("y"))
             globalState.setState();
