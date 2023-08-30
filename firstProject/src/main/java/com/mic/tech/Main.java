@@ -43,18 +43,28 @@ public class Main {
         System.out.println(result);
     }
     protected void initialize(){
-        System.out.println("初始化中");
+        System.out.println("初始化中...");
         actions=new ArrayList<>();
         scanner=new Scanner(System.in);
         globalState=new GlobalState();
-        this.outPut("成功加载全局变量","OK");
+        this.outPut("加载全局变量完成","成功");
         userService=new UserService();
-        this.outPut("用户服务模块加载完成","OK");
+        this.outPut("服务模块加载完成","成功");
         this.actions.add(new ListAction(actions));
         this.actions.add(new QuitAction(scanner,globalState));
         this.actions.add(new LoginAction(scanner,globalState,userService));
         this.actions.add(new LogoutAction(globalState));
-        this.outPut("操作加载完成","OK");
+        this.outPut("基本操作加载完成","成功");
+        this.actions.add(new ListAllUserAction(globalState,userService));
+        this.actions.add(new ListUserAction(globalState,userService,scanner));
+        this.actions.add(new ChangeUserRoleAction(userService,globalState,scanner));
+        this.actions.add(new ChangeUserPasswordAction(userService,globalState,scanner));
+        this.actions.add(new ChangeUserEmailAction(userService,globalState,scanner));
+        this.actions.add(new ChangeUserTelephoneNumberAction(userService,globalState,scanner));
+        this.actions.add(new DeleteUserAction(globalState,userService,scanner));
+        this.outPut("用户操作加载完成","成功");
+        this.actions.add(new CustomerRegisterAction(globalState,userService,scanner));
+        this.outPut("顾客操作加载完成","成功");
     }
 
     protected void run(){

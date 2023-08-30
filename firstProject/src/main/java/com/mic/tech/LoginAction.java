@@ -18,9 +18,9 @@ public class LoginAction extends AbstractAction{
         return "你可以登录你的账号";
     }
     public void run() {
-        System.out.println("请输入用户名");
+        System.out.print("请输入用户名:");
         String userName=scanner.nextLine();
-        System.out.println("请输入密码");
+        System.out.print("请输入密码:");
         String password=scanner.nextLine();
         Role role=login(userName,password);
         if (role!=null){
@@ -35,7 +35,7 @@ public class LoginAction extends AbstractAction{
     }
     private Role login(String userName,String password){
         User user = this.userService.getUserByUserName(userName);
-        if(userName.equals("admin")&&password.equals("ynuinfo#777")) {
+        if(userName.equals(state.getAdministratorName())&&password.equals(state.getAdministratorPassword())) {
             return Role.ADMINISTRATOR;
         }
         else if (user != null && user.getPassword().equals(password)) {

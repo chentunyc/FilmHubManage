@@ -4,12 +4,10 @@ public class User {
     private String username = null;
     private String password = null;
     private Role role = null;
-    private int id;
-    private int telephoneNumber;
-    private String email;
-    private int registrationTime;
-
-
+    private int id=0;
+    private int telephoneNumber=0;
+    private int registrationTime=0;
+    private String email=null;
     public String getUsername() {
         return username;
     }
@@ -48,6 +46,7 @@ public class User {
     public int getRegistrationTime(){
         return registrationTime;
     }
+    public void setregistrationTime(int registrationTime){this.registrationTime=registrationTime;}
     public String getEmail(){
         return email;
     }
