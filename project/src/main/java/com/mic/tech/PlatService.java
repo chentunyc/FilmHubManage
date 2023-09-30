@@ -18,6 +18,7 @@ public class PlatService implements PlatDAO{
                 list.get(i).setPrice(plat.getPrice());
                 list.get(i).setScreeningHall(plat.getScreeningHall());
                 list.get(i).setTime(plat.getTime());
+                list.get(i).setSeat(plat.getSeat());
                 break;
             }
         }
@@ -33,14 +34,24 @@ public class PlatService implements PlatDAO{
         }
     }
 
-    public Plat getFlatByFlatTime(String time) {
+    public Plat getFlatBYTimeTitle(String time, String title) {
         for (Plat plat:list){
-            if(plat.getTime().equals(time))
+            if(plat.getTime().equals(time)&&plat.getFilm().getTitle().equals(title))
                 return plat;
         }
         return null;
     }
-
+    public Plat getPlatByTicketId(String ticketId){
+        for (Plat plat:list){
+            for(int i=0;i<7;i++) {
+                for (int j = 0; j < 12; j++) {
+                    if(plat.getTicketID(i,j).equals(ticketId))
+                        return plat;
+                }
+            }
+        }
+        return null;
+    }
     public List<Plat> getAllPlats() {
         return list;
     }

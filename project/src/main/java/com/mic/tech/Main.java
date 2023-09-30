@@ -68,6 +68,11 @@ public class Main {
         this.actions.add(new DeleteUserAction(globalState,userService,scanner));
         this.outPut("管理操作加载完成","成功");
         this.actions.add(new CustomerRegisterAction(globalState,userService,scanner));
+        this.actions.add(new ForgetUserPasswordAction(globalState,userService,scanner));
+        this.actions.add(new SoldTicketAction(globalState,platService,userService,scanner));
+        this.actions.add(new ByTicketAction(globalState,platService,userService,scanner));
+        this.actions.add(new ListBuyRecordAction(globalState,platService,userService));
+        this.actions.add(new PickTicketAction(globalState,platService,userService,scanner));
         this.outPut("顾客操作加载完成","成功");
         this.actions.add(new ListAllFilmAction(globalState,filmService));
         this.actions.add(new ListFilmAction(globalState,filmService,scanner));
@@ -78,7 +83,8 @@ public class Main {
         this.actions.add(new PlatAddAction(globalState,filmService,platService,scanner));
         this.actions.add(new ChangePlatAction(globalState,filmService,platService,scanner));
         this.actions.add(new DeletePlatAction(globalState,platService,scanner));
-        this.actions.add(new LIstAllPlatAction(globalState,platService));
+        this.actions.add(new ListAllPlatAction(globalState,platService));
+        this.actions.add(new ListPlatAction(globalState,platService,scanner));
         this.outPut("排片操作加载完成","成功");
     }
 
@@ -86,7 +92,8 @@ public class Main {
         boolean found=false;
         System.out.println("程序运行中...");
         System.out.println("欢迎您使用本程序");
-        System.out.println("请输入LIST来获取可以执行的操作");
+        System.out.println("请输入LIST来获取可以执行的操作列表");
+        System.out.println("有的操作需要先登录才能执行");
         while(this.globalState.isRuning()){
             System.out.print(">");
             String antionName=scanner.nextLine();

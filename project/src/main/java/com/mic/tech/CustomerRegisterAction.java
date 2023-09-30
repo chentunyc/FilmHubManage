@@ -15,39 +15,47 @@ public class CustomerRegisterAction extends AbstractAuthenticatedAction {
     }
 
     public String getDescription() {
-        return "你可以增加用户";
+        return "你可以增加用户 only admin";
     }
 
     public String getActionName() {
-        return "CUSTOMER_REGISTERACTION";
+        return "CUSTOMER_REGISTER";
     }
 
     void perform() {
         if (state.getUserRole() == Role.ADMINISTRATOR) {
             User user = new User();
             List<User> list=userService.getAllUsers();
+            String userName=null;
+            String password=null;
+            String password1=null;
+            String rule="[a-z A-Z| 0-9|\\p{Punct}]+";
             boolean verifyEmail=false;
             boolean verifyTelephoneNumber=false;
-            super.print("请输入用户名：");
-            user.setUsername(scanner.nextLine());
-            while (list.contains(userService.getUserByUserName(user.getUsername()))) {
-                super.print("用户名重复，请再次输入用户名：");
-                user.setUsername(scanner.nextLine());
+            super.print("请输入用户名,用户名需要大于或等于5个字符：");
+            userName=scanner.nextLine();
+            while (userName.length()<5) {
+                super.print("请输入用户名,用户名需要大于或等于5个字符：");
+                userName=scanner.nextLine();
+                while (list.contains(userService.getUserByUserName(userName))) {
+                    super.print("用户名重复，请再次输入用户名：");
+                    userName=scanner.nextLine();
+                }
             }
-
+            user.setUsername(userName);
+            super.println("密码长度需要大于等于八位，两次输入不能重复，只能是数字字母和符号");
             super.print("请输入密码：");
-            String password = scanner.nextLine();
+            password = scanner.nextLine();
             super.print("请再次输入密码：");
-            String password1 = scanner.nextLine();
-            while (!password.equals(password1)) {
-                super.println("俩次密码不一致");
+            password1 = scanner.nextLine();
+            while (!password.equals(password1)||!password.matches(rule)||password.length()<8) {
+                super.println("不符合规范");
                 super.print("请输入密码：");
                 password = scanner.nextLine();
                 super.print("请再次输入密码：");
                 password1 = scanner.nextLine();
             }
             user.setPassword(password);
-
             user.setRole(Role.BRONZE_CUSTOMER);
 
             String email=null;
@@ -59,24 +67,25 @@ public class CustomerRegisterAction extends AbstractAuthenticatedAction {
                         super.print("邮箱重复，请再次请输入邮箱：");
                         email=scanner.nextLine();
                     }
+                    if(i==list.size()-1&&email!=(userService.getUserByUserId(i).getEmail()))
+                        verifyEmail=true;
                 }
                 user.setEmail(email);
-                verifyEmail=true;
             }
 
-            int telephoneNumber=0;
+            String telephoneNumber=null;
             super.print("请输入手机号码：");
-            telephoneNumber=scanner.nextInt();
-
+            telephoneNumber=scanner.nextLine();
             while (!verifyTelephoneNumber) {
                 for (int i = 0; i < list.size(); i++) {
-                    if(telephoneNumber==(userService.getUserByUserId(i).getTelephoneNumber())){
+                    if(telephoneNumber.equals(userService.getUserByUserId(i).getTelephoneNumber())){
                         super.print("手机号码重复，请再次请输入手机号码：");
-                        telephoneNumber=scanner.nextInt();
+                        telephoneNumber=scanner.nextLine();
                     }
+                    if(i==list.size()-1&&!telephoneNumber.equals(userService.getUserByUserId(i).getTelephoneNumber()))
+                        verifyTelephoneNumber=true;
                 }
                 user.setTelephoneNumber(telephoneNumber);
-                verifyTelephoneNumber=true;
             }
 
             super.print("请输入注册时间：");

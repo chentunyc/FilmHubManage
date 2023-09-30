@@ -15,14 +15,26 @@ public class LoginAction extends AbstractAction{
         return "LOGIN";
     }
     public String getDescription(){
-        return "你可以登录你的账号";
+        return "你可以登录你的账号 everyone";
     }
     public void run() {
-        System.out.print("请输入用户名:");
-        String userName=scanner.nextLine();
-        System.out.print("请输入密码:");
-        String password=scanner.nextLine();
-        Role role=login(userName,password);
+        int tryNumber=0;
+        String userName=null;
+        String password=null;
+        boolean locked=false;
+        Role role=null;
+        while (!locked&&role==null){
+            System.out.print("请输入用户名:");
+            userName = scanner.nextLine();
+            System.out.print("请输入密码:");
+            password = scanner.nextLine();
+            role = login(userName, password);
+            tryNumber++;
+            if(tryNumber==5){
+                locked=true;
+                break;
+            }
+        }
         if (role!=null){
             state.setUserName(userName);
             state.setRole(role);
@@ -31,6 +43,7 @@ public class LoginAction extends AbstractAction{
         }
         else{
             System.out.println("登录失败");
+
         }
     }
     private Role login(String userName,String password){

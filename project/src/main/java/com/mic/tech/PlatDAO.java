@@ -6,6 +6,6 @@ public interface PlatDAO {
     void addPlat(Plat plat);
     void updateFlat(Plat plat);
     void deleteFlat(String time);
-    Plat getFlatByFlatTime(String time);
+    Plat getFlatBYTimeTitle(String time, String title);
     List<Plat>getAllPlats();
 }

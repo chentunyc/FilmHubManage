@@ -17,7 +17,7 @@ public class ChangePlatAction extends AbstractAuthenticatedAction {
     }
 
     public String getDescription() {
-        return "改变排片信息";
+        return "改变排片信息 only manager";
     }
 
     public String getActionName() {
@@ -28,7 +28,9 @@ public class ChangePlatAction extends AbstractAuthenticatedAction {
         if (state.getUserRole() == Role.MANAGER) {
             super.print("请输入原排片时间");
             String time = scanner.nextLine();
-            Plat plat = platService.getFlatByFlatTime(time);
+            super.print("请输入原影片片名:");
+            String title=scanner.nextLine();
+            Plat plat = platService.getFlatBYTimeTitle(time,title);
             if (plat != null) {
                 List<String> list = new ArrayList<>();
                 list.add("SCREENINGHALL");

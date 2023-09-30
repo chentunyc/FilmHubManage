@@ -12,10 +12,32 @@ public class UserService implements UserDAO{
         administor.setEmail("NULL");
         administor.setregistrationTime(0);
         administor.setUsername("admin");
-        administor.setTelephoneNumber(0);
+        administor.setTelephoneNumber(null);
         administor.setPurchaseAmount(0);
         administor.setPurchaseNumber(0);
         addUser(administor);
+        User manager=new User();
+        manager.setId(list.size());
+        manager.setRole(AbstractAuthenticatedAction.Role.MANAGER);
+        manager.setPassword("ynuinfo#777");
+        manager.setEmail("NULL");
+        manager.setregistrationTime(0);
+        manager.setUsername("manager");
+        manager.setTelephoneNumber(null);
+        manager.setPurchaseAmount(0);
+        manager.setPurchaseNumber(0);
+        addUser(manager);
+        User receptionist=new User();
+        receptionist.setId(list.size());
+        receptionist.setRole(AbstractAuthenticatedAction.Role.RECEPTIONIST);
+        receptionist.setPassword("ynuinfo#777");
+        receptionist.setEmail("NULL");
+        receptionist.setregistrationTime(0);
+        receptionist.setUsername("receptionist");
+        receptionist.setTelephoneNumber(null);
+        receptionist.setPurchaseAmount(0);
+        receptionist.setPurchaseNumber(0);
+        addUser(receptionist);
     }
     public void addUser(User user) {
         list.add(user);
@@ -27,6 +49,14 @@ public class UserService implements UserDAO{
             }
         }
             return null;
+    }
+    public User getUserByUserTelephoneNumber(String telephoneNumber){
+        for(User user:list){
+            if(user.getTelephoneNumber().equals(telephoneNumber)) {
+                return user;
+            }
+        }
+        return null;
     }
     public User getUserByUserId(int id){
         return list.get(id);

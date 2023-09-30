@@ -29,13 +29,13 @@ public class ListUserAction extends AbstractAuthenticatedAction{
             }
             if(user!=null) {
                 Role role = user.getRole();
-                int telephoneNumber = user.getTelephoneNumber();
+                String telephoneNumber = user.getTelephoneNumber();
                 int registrationTime = user.getRegistrationTime();
                 String email = user.getEmail();
                 System.out.println(this.getActionName().toUpperCase() + "> ");
-                System.out.printf("%-20s %-10s %-15s %-16s","role","email","telephoneNumber","registrationTime");
+                System.out.printf("%-20s %-20s %-15s %-16s","role","email","telephoneNumber","registrationTime");
                 System.out.println();
-                System.out.printf("%-20s %-10s %-15d %-16d",role,email,telephoneNumber,registrationTime);
+                System.out.printf("%-20s %-20s %-15s %-16d",role,email,telephoneNumber,registrationTime);
                 System.out.println();
             }
         }
@@ -58,15 +58,15 @@ public class ListUserAction extends AbstractAuthenticatedAction{
                 Role role = user.getRole();
                 if(role==Role.BRONZE_CUSTOMER||role==Role.SILVER_CUSTOMER||role==Role.GOLD_CUSTOMER) {
                     String roleName = role.name();
-                    int telephoneNumber = user.getTelephoneNumber();
+                    String telephoneNumber = user.getTelephoneNumber();
                     int registrationTime = user.getRegistrationTime();
                     int purchaseAmount = user.getPurchaseAmount();
                     int purchaseNumber = user.getPurchaseNumber();
                     String email = user.getEmail();
                     System.out.println(this.getActionName().toUpperCase() + "> ");
-                    System.out.printf("%-20s %-15s %-15s %-10s %-15s %-16s", "role", "purchaseAmount", "purchaseNumber","email", "telephoneNumber", "registrationTime");
+                    System.out.printf("%-20s %-15s %-15s %-20s %-15s %-16s", "role", "purchaseAmount", "purchaseNumber","email", "telephoneNumber", "registrationTime");
                     System.out.println();
-                    System.out.printf("%-20s %-15d %-15d %-10s %-15d %-16d", roleName, purchaseAmount, purchaseNumber,email, telephoneNumber, registrationTime);
+                    System.out.printf("%-20s %-15d %-15d %-20s %-15s %-16d", roleName, purchaseAmount, purchaseNumber,email, telephoneNumber, registrationTime);
                     System.out.println();
                 }
             }
@@ -75,7 +75,7 @@ public class ListUserAction extends AbstractAuthenticatedAction{
             super.println("你不是管理员或者经理无法执行此操作");
     }
     public String getDescription(){
-        return "列出指定用户信息";
+        return "列出指定用户信息 only admin or manager";
     }
     public String getActionName(){
         return "LIST_USER";

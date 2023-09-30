@@ -1,15 +1,21 @@
 package com.mic.tech;
 import  com.mic.tech.AbstractAuthenticatedAction.Role;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private String username = null;
     private String password = null;
     private Role role = null;
     private int id=0;
-    private int telephoneNumber=0;
+    private String telephoneNumber=null;
     private int registrationTime=0;
     private String email=null;
     private int purchaseNumber=0;
     private int purchaseAmount=0;
+    private List <String> buyRecord=new ArrayList<>();
+    private List <String> buyTimeRecord=new ArrayList<>();
     public String getUsername() {
         return username;
     }
@@ -39,10 +45,10 @@ public class User {
     public void setId(int id){
         this.id=id;
     }
-    public int getTelephoneNumber(){
+    public String getTelephoneNumber(){
         return telephoneNumber;
     }
-    public void setTelephoneNumber(int telephoneNumber){
+    public void setTelephoneNumber(String telephoneNumber){
         this.telephoneNumber=telephoneNumber;
     }
     public int getRegistrationTime(){
@@ -68,5 +74,17 @@ public class User {
     }
     public int getPurchaseAmount(){
         return purchaseAmount;
+    }
+    public List getBuyRecord(){
+        return buyRecord;
+    }
+    public void addBuyRecord(String record){
+        buyRecord.add(record);
+    }
+    public List getBuyTimeRecord(){
+        return buyTimeRecord;
+    }
+    public void addBuyTimeRecord(String record){
+        buyTimeRecord.add(record);
     }
 }

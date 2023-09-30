@@ -23,7 +23,7 @@ public class ChangeUserTelephoneNumberAction extends AbstractAuthenticatedAction
                 super.println("没有找到该用户");
             } else {
                 super.print("请输入新的用户手机号");
-                int telephoneNumber = scanner.nextInt();
+                String telephoneNumber = scanner.nextLine();
                 user.setTelephoneNumber(telephoneNumber);
                 userService.updateUser(user);
                 super.println("已经成功更改用户手机号");

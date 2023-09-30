@@ -11,17 +11,17 @@ public class ListAllUserAction extends AbstractAuthenticatedAction{
         if(state.getUserRole()==Role.ADMINISTRATOR){
             if(!userService.getAllUsers().isEmpty()){
                 System.out.println(this.getActionName().toUpperCase() + "> ");
-                System.out.printf("%-3s %-10s %-20s %-10s %-15s %-16s","id","username","role","email","telephoneNumber","registrationTime");
+                System.out.printf("%-3s %-20s %-20s %-20s %-15s %-16s","id","username","role","email","telephoneNumber","registrationTime");
                 System.out.println();
             }
             for(User user : userService.getAllUsers()){
                 String username = user.getUsername();
                 Role role = user.getRole();
                 int id= user.getId();
-                int telephoneNumber= user.getTelephoneNumber();
+                String telephoneNumber= user.getTelephoneNumber();
                 int registrationTime=user.getRegistrationTime();
                 String email=user.getEmail();
-                System.out.printf("%-3s %-10s %-20s %-10s %-15s %-16s",id,username,role,email,telephoneNumber,registrationTime);
+                System.out.printf("%-3s %-20s %-20s %-20s %-15s %-16s",id,username,role,email,telephoneNumber,registrationTime);
                 System.out.println();
             }
         }
@@ -37,7 +37,7 @@ public class ListAllUserAction extends AbstractAuthenticatedAction{
                 if(role==Role.BRONZE_CUSTOMER||role==Role.SILVER_CUSTOMER||role==Role.GOLD_CUSTOMER) {
                     String roleName=role.name();
                     int id = user.getId();
-                    int telephoneNumber = user.getTelephoneNumber();
+                    String telephoneNumber = user.getTelephoneNumber();
                     int registrationTime = user.getRegistrationTime();
                     int purchaseAmount = user.getPurchaseAmount();
                     int purchaseNumber = user.getPurchaseNumber();
@@ -53,7 +53,7 @@ public class ListAllUserAction extends AbstractAuthenticatedAction{
 
     }
     public String getDescription(){
-        return "列出所有用户信息";
+        return "列出所有用户信息 only admin or manager";
     }
     public String getActionName(){
         return "LIST_ALL_USER";
