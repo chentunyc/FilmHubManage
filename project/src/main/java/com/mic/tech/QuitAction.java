@@ -13,7 +13,7 @@ public class QuitAction extends AbstractAction{
         return "QUIT";
     }
     public String getDescription(){
-        return "你可以退出程序";
+        return "你可以退出程序 everyone";
     }
     public void run(){
         super.print("请输入y/n来决定是否退出程序");

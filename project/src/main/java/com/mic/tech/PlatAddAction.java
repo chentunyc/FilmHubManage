@@ -15,7 +15,7 @@ public class PlatAddAction extends AbstractAuthenticatedAction{
     }
 
     public String getDescription() {
-        return "增加排片";
+        return "增加排片 only manager";
     }
 
     public String getActionName() {

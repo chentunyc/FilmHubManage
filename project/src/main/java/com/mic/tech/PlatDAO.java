@@ -4,8 +4,9 @@ import java.util.List;
 
 public interface PlatDAO {
     void addPlat(Plat plat);
-    void updateFlat(Plat plat);
-    void deleteFlat(String time);
-    Plat getFlatBYTimeTitle(String time, String title);
+    void updatePlat(Plat plat);
+    void deletePlat(String time);
+    Plat getPlatBYTimeTitle(String time, String title);
+    public Plat getPlatByTicketId(String ticketId);
     List<Plat>getAllPlats();
 }

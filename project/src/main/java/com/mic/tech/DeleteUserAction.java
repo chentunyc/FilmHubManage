@@ -13,7 +13,7 @@ public class DeleteUserAction extends AbstractAuthenticatedAction{
         this.scanner=scanner;
     }
     public String getDescription() {
-        return "删除用户";
+        return "删除用户 only admin";
     }
 
     public String getActionName() {

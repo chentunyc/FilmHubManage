@@ -1,6 +1,5 @@
 package com.mic.tech;
-
-public class Film {
+public class Film{
     private String title=null;
     private String director=null;
     private String starring=null;

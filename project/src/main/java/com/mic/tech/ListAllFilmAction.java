@@ -8,7 +8,7 @@ public class ListAllFilmAction extends AbstractAuthenticatedAction{
         this.filmService=filmService;
     }
     public String getDescription() {
-        return "列出所有影片信息";
+        return "列出所有影片信息 only manager or receptionist";
     }
 
     public String getActionName() {

@@ -1,5 +1,9 @@
 package com.mic.tech;
 
+import com.mic.tech.kindsOfData.FilmDataDAO;
+import com.mic.tech.kindsOfData.PlatDataDAO;
+import com.mic.tech.kindsOfData.UserDataDAO;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
@@ -50,9 +54,9 @@ public class Main {
         scanner=new Scanner(System.in);
         globalState=new GlobalState();
         this.outPut("加载全局变量完成","成功");
-        userService=new UserService();
-        filmService=new FilmService();
-        platService=new PlatService();
+        userService=new UserService(new UserDataDAO());
+        filmService=new FilmService(new FilmDataDAO());
+        platService=new PlatService(new PlatDataDAO());
         this.outPut("服务模块加载完成","成功");
         this.actions.add(new ListAction(actions));
         this.actions.add(new QuitAction(scanner,globalState));
@@ -70,7 +74,7 @@ public class Main {
         this.actions.add(new CustomerRegisterAction(globalState,userService,scanner));
         this.actions.add(new ForgetUserPasswordAction(globalState,userService,scanner));
         this.actions.add(new SoldTicketAction(globalState,platService,userService,scanner));
-        this.actions.add(new ByTicketAction(globalState,platService,userService,scanner));
+        this.actions.add(new BuyTicketAction(globalState,platService,userService,scanner));
         this.actions.add(new ListBuyRecordAction(globalState,platService,userService));
         this.actions.add(new PickTicketAction(globalState,platService,userService,scanner));
         this.outPut("顾客操作加载完成","成功");
@@ -95,10 +99,14 @@ public class Main {
         System.out.println("请输入LIST来获取可以执行的操作列表");
         System.out.println("有的操作需要先登录才能执行");
         while(this.globalState.isRuning()){
-            System.out.print(">");
-            String antionName=scanner.nextLine();
+            String username = this.globalState.getUserName();
+            username = username != null
+                    ? "登录者: " + username.toLowerCase() + "@" + this.globalState.getUserRole().toString()
+                    : "";
+            System.out.print(username + "> ");
+            String actionName = this.scanner.nextLine();
             for(AbstractAction action:actions){
-                if(action.getActionName().equals(antionName)){
+                if(action.getActionName().equals(actionName)){
                     action.run();
                     found=true;
                     break;
@@ -107,6 +115,7 @@ public class Main {
             if(!found)
                 System.out.println("没有找到可以执行的功能");
         }
+        System.out.println("运行结束");
     }
     protected void free(){
         System.out.println("释放资源中...");

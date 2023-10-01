@@ -8,7 +8,7 @@ public class LogoutAction extends AbstractAuthenticatedAction{
         return "LOGOUT";
     }
     public String getDescription(){
-        return "你可以退出账号";
+        return "你可以退出账号 everyone";
     }
     public void perform(){
             state.setUserName(null);

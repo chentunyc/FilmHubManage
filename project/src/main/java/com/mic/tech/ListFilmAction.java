@@ -14,7 +14,7 @@ public class ListFilmAction extends AbstractAuthenticatedAction {
     }
 
     public String getDescription() {
-        return "查询影片";
+        return "查询影片 only manager";
     }
 
     public String getActionName() {

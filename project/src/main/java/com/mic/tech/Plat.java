@@ -1,6 +1,5 @@
 package com.mic.tech;
-
-public class Plat {
+public class Plat{
     private String screeningHall=null;
     private int price=0;
     private String time=null;

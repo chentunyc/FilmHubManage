@@ -5,60 +5,35 @@ import java.util.Iterator;
 import java.util.List;
 
 public class FilmService implements FilmDao{
-    List <Film> list=new ArrayList<>();
+    FilmDao filmDao=null;
+    FilmService(FilmDao filmDao){
+        this.filmDao=filmDao;
+    }
     public void addFilm(Film film) {
-        list.add(film);
+        filmDao.addFilm(film);
     }
 
     public void updateFilm(Film film) {
-        for(int i=0;i<list.size();i++){
-            Film information=list.get(i);
-            if (information.getTitle().equals(film.getTitle())||information.getSynopsis().equals(film.getSynopsis())){
-                list.get(i).setTitle(film.getTitle());
-                list.get(i).setDirector(film.getDirector());
-                list.get(i).setStarring(film.getStarring());
-                list.get(i).setSynopsis(film.getSynopsis());
-                list.get(i).setDuration(film.getDuration());
-                break;
-            }
-        }
+        filmDao.updateFilm(film);
     }
 
     public void deleteFilm(String title) {
-        Iterator<Film> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            Film film = iterator.next();
-            if (film.getTitle().equals(title)) {
-                iterator.remove();
-            }
-        }
+        filmDao.deleteFilm(title);
     }
 
     public Film getFilmByFilmTitle(String title) {
-        for (Film film:list){
-            if(film.getTitle().equals(title))
-                return film;
-        }
-        return null;
+        return filmDao.getFilmByFilmTitle(title);
     }
 
     public Film getFilmByFilmDirector(String director) {
-        for (Film film:list){
-            if(film.getDirector().equals(director))
-                return film;
-        }
-        return null;
+        return filmDao.getFilmByFilmDirector(director);
     }
 
     public Film getFilmByFilmStarring(String starring) {
-        for (Film film:list){
-            if(film.getStarring().equals(starring))
-                return film;
-        }
-        return null;
+        return filmDao.getFilmByFilmStarring(starring);
     }
 
     public List<Film> getAllFilms() {
-        return list;
+        return filmDao.getAllFilms();
     }
 }

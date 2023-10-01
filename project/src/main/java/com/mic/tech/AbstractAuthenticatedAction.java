@@ -1,6 +1,6 @@
 package com.mic.tech;
 
-abstract class AbstractAuthenticatedAction extends AbstractAction{
+public abstract class AbstractAuthenticatedAction extends AbstractAction{
     public enum Role {
         ADMINISTRATOR,
         MANAGER,

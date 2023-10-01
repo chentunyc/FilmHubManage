@@ -14,7 +14,7 @@ public class ChangeFilmAction extends AbstractAuthenticatedAction{
         this.scanner=scanner;
     }
     public String getDescription() {
-        return "修改影片信息";
+        return "修改影片信息 only manager";
     }
 
     public String getActionName() {

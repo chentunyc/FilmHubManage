@@ -72,10 +72,10 @@ public class ListUserAction extends AbstractAuthenticatedAction{
             }
         }
         else
-            super.println("你不是管理员或者经理无法执行此操作");
+            super.println("你不是管理员或者经理或者客户无法执行此操作");
     }
     public String getDescription(){
-        return "列出指定用户信息 only admin or manager";
+        return "列出指定用户信息 only admin or manager or customers";
     }
     public String getActionName(){
         return "LIST_USER";

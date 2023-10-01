@@ -1,11 +1,11 @@
 package com.mic.tech;
 import java.util.Scanner;
-public class ByTicketAction extends AbstractAuthenticatedAction{
+public class BuyTicketAction extends AbstractAuthenticatedAction{
     GlobalState state=null;
     PlatService platService=null;
     UserService userService=null;
     Scanner scanner=null;
-    ByTicketAction(GlobalState state, PlatService platService, UserService userService, Scanner scanner){
+    BuyTicketAction(GlobalState state, PlatService platService, UserService userService, Scanner scanner){
         this.state=state;
         this.platService=platService;
         this.userService=userService;
@@ -15,11 +15,11 @@ public class ByTicketAction extends AbstractAuthenticatedAction{
         return "你可以买票 only customers";
     }
     public String getActionName() {
-        return "BY_TICKET";
+        return "BUY_TICKET";
     }
 
     void perform() {
-        currentRole=state.getUserRole();
+        Role currentRole=state.getUserRole();
         if (currentRole==Role.GOLD_CUSTOMER||currentRole==Role.BRONZE_CUSTOMER||currentRole==Role.SILVER_CUSTOMER) {
             Plat plat = null;
             User user=userService.getUserByUserName(state.getUserName());

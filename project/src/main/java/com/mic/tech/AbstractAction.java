@@ -1,6 +1,6 @@
 package com.mic.tech;
 
-abstract class AbstractAction {
+public abstract class AbstractAction {
 
     public abstract String getDescription();
     public abstract String getActionName();

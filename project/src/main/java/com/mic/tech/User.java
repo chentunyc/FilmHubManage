@@ -1,10 +1,20 @@
 package com.mic.tech;
 import  com.mic.tech.AbstractAuthenticatedAction.Role;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class User {
+    User(String username,String password,Role role,int id,String telephoneNumber,int registrationTime,String email,int purchaseNumber,int purchaseAmount){
+        this.username=username;
+        this.password=password;
+        this.role=role;
+        this.id=id;
+        this.telephoneNumber=telephoneNumber;
+        this.registrationTime=registrationTime;
+        this.email=email;
+        this.purchaseAmount=purchaseAmount;
+        this.purchaseNumber=purchaseNumber;
+    }
+    User(){}
     private String username = null;
     private String password = null;
     private Role role = null;

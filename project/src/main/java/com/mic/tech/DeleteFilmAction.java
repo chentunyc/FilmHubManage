@@ -14,7 +14,7 @@ public class DeleteFilmAction extends AbstractAuthenticatedAction{
         this.scanner=scanner;
     }
     public String getDescription() {
-        return "删除影片";
+        return "删除影片 only manager";
     }
 
     public String getActionName() {

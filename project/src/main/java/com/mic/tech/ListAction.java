@@ -11,7 +11,7 @@ public class ListAction extends AbstractAction{
         return "LIST";
     }
     public String getDescription() {
-        return "列出可执行的操作";
+        return "列出可执行的操作 everyone";
     }
     public void run() {
         for(AbstractAction lst:this.list){

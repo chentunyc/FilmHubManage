@@ -23,8 +23,7 @@ public class ChangeUserEmailAction extends AbstractAuthenticatedAction{
             } else {
                 super.print("请输入新的用户邮箱");
                 String email = scanner.nextLine();
-                user.setEmail(email);
-                userService.updateUser(user);
+                userService.updateUser(user,user.getPassword(),user.getRole(),email, user.getTelephoneNumber(), user.getPurchaseNumber(),user.getPurchaseAmount());
                 super.println("已经成功更改用户邮箱");
             }
         }
