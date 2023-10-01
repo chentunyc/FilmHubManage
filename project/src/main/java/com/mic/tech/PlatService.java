@@ -14,7 +14,9 @@ public class PlatService{
     public void updateFlat(Plat plat) {
         platDao.updatePlat(plat);
     }
-
+    public void updateFlatByData(Plat plat, String screeningHall, int price, String time, Film film,String seat[][]){
+        platDao.updatePlatByData(plat,screeningHall,price,time,film,seat);
+    }
     public void deleteFlat(String time) {
         platDao.deletePlat(time);
     }

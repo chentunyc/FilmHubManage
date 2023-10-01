@@ -32,7 +32,9 @@ public class FilmService implements FilmDao{
     public Film getFilmByFilmStarring(String starring) {
         return filmDao.getFilmByFilmStarring(starring);
     }
-
+    public void updateFilmByData(Film film,String title,String director,String starring,String synopsis,String duration){
+        filmDao.updateFilmByData(film,title,director,starring,synopsis,duration);
+    }
     public List<Film> getAllFilms() {
         return filmDao.getAllFilms();
     }

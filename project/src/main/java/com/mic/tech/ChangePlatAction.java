@@ -50,24 +50,33 @@ public class ChangePlatAction extends AbstractAuthenticatedAction {
                     case "1": {
                         super.print("修改的内容: ");
                         String temporaryString = scanner.nextLine();
+                        /*
                         plat.setScreeningHall(temporaryString);
                         platService.updateFlat(plat);
+                         */
+                        platService.updateFlatByData(plat,temporaryString,plat.getPrice(),plat.getTime(),plat.getFilm(),plat.getSeat());
                         super.println("已经成功更改排片放映厅");
                         break;
                     }
                     case "2": {
                         super.print("修改的内容: ");
                         int temporaryString = scanner.nextInt();
+                        /*
                         plat.setPrice(temporaryString);
                         platService.updateFlat(plat);
+                         */
+                        platService.updateFlatByData(plat,plat.getScreeningHall(),temporaryString,plat.getTime(),plat.getFilm(),plat.getSeat());
                         super.println("已经成功更改排片价格");
                         break;
                     }
                     case "3": {
                         super.print("修改的内容: ");
                         String temporaryString = scanner.nextLine();
+                        /*
                         plat.setTime(temporaryString);
                         platService.updateFlat(plat);
+                         */
+                        platService.updateFlatByData(plat,plat.getScreeningHall(),plat.getPrice(),temporaryString,plat.getFilm(),plat.getSeat());
                         super.println("已经成功更改排片时间");
                         break;
                     }
@@ -76,16 +85,23 @@ public class ChangePlatAction extends AbstractAuthenticatedAction {
                         String temporaryString = scanner.nextLine();
                         Film film;
                         film = filmService.getFilmByFilmTitle(temporaryString);
+                        /*
                         plat.setFilm(film);
                         platService.updateFlat(plat);
-
+                         */
+                        platService.updateFlatByData(plat,plat.getScreeningHall(),plat.getPrice(),plat.getTime(),film,plat.getSeat());
+                        super.println("已经成功更改排片影片");
+                        break;
                     }
                     case "5": {
+                        /*
                         plat.setFilm(null);
                         plat.setTime(null);
                         plat.setScreeningHall(null);
                         plat.setPrice(0);
                         platService.updateFlat(plat);
+                         */
+                        platService.updateFlatByData(plat,null,0,null,null,null);
                         super.println("已经成功排空");
                         break;
                     }

@@ -1,6 +1,7 @@
 package com.mic.tech;
 import java.util.Scanner;
 import com.mic.tech.AbstractAuthenticatedAction.Role;
+import com.mic.tech.User;
 public class LoginAction extends AbstractAction{
     private Scanner scanner=null;
     private GlobalState state=null;
@@ -28,6 +29,7 @@ public class LoginAction extends AbstractAction{
             userName = scanner.nextLine();
             System.out.print("请输入密码:");
             password = scanner.nextLine();
+            //role = login(userName, User.hashPassword(password));
             role = login(userName, password);
             tryNumber++;
             if(tryNumber==5){

@@ -20,3 +20,5 @@ userSeivice的delete方法错误，arraylist不能直接遍历删除其中的元
 改变了三个service,完善工作由DAO的子类完成，实例化时用子类实例化，数据储存在子类当中，而不是seivice中
 
 用文件存储的方式实现DAO接口
+# 1.2 密码加密保存
+通过HASH进行密码加密

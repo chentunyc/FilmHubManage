@@ -2,6 +2,8 @@ package com.mic.tech;
 import  com.mic.tech.AbstractAuthenticatedAction.Role;
 import java.util.ArrayList;
 import java.util.List;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 public class User {
     User(String username,String password,Role role,int id,String telephoneNumber,int registrationTime,String email,int purchaseNumber,int purchaseAmount){
         this.username=username;
@@ -39,7 +41,8 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password=password;
+        //this.password=hashPassword(password);
     }
 
     public Role getRole() {
@@ -97,4 +100,34 @@ public class User {
     public void addBuyTimeRecord(String record){
         buyTimeRecord.add(record);
     }
+    /*
+    public static String hashPassword(String password) {
+        try {
+            // 创建SHA-256散列对象
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // 将密码转换为字节数组
+            byte[] passwordBytes = password.getBytes();
+
+            // 计算散列值
+            byte[] hashBytes = digest.digest(passwordBytes);
+
+            // 将散列值转换为十六进制字符串
+            StringBuilder hexString = new StringBuilder();
+            for (byte hashByte : hashBytes) {
+                String hex = Integer.toHexString(0xff & hashByte);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+     */
 }

@@ -44,7 +44,6 @@ public class FilmDataDAO implements FilmDao {
             }
         }
     }
-
     public void updateFilm(Film film) {
         for(int i=0;i<list.size();i++){
             Film information=list.get(i);
@@ -58,7 +57,24 @@ public class FilmDataDAO implements FilmDao {
             }
         }
     }
-
+    public void updateFilmByData(Film film,String title,String director,String starring,String synopsis,String duration){
+        changeData("<filmTitle:"+film.getTitle()+">"+"FilmTitle:"+film.getTitle(),"<filmTitle:"+film.getTitle()+">"+"FilmTitle:"+title);
+        changeData("<filmTitle:"+film.getTitle()+">"+"FilmSynopsis:"+film.getSynopsis(),"<filmTitle:"+film.getTitle()+">"+"FilmSynopsis:"+synopsis);
+        changeData("<filmTitle:"+film.getTitle()+">"+"FilmDirector:"+film.getDirector(),"<filmTitle:"+film.getTitle()+">"+"FilmDirector:"+director);
+        changeData("<filmTitle:"+film.getTitle()+">"+"FilmDuration:"+film.getDuration(),"<filmTitle:"+film.getTitle()+">"+"FilmDuration:"+duration);
+        changeData("<filmTitle:"+film.getTitle()+">"+"FilmStarring:"+film.getStarring(),"<filmTitle:"+film.getTitle()+">"+"FilmStarring:"+starring);
+        for(int i=0;i<list.size();i++){
+            Film information=list.get(i);
+            if (information.getTitle().equals(film.getTitle())||information.getSynopsis().equals(film.getSynopsis())){
+                list.get(i).setTitle(title);
+                list.get(i).setDirector(director);
+                list.get(i).setStarring(starring);
+                list.get(i).setSynopsis(synopsis);
+                list.get(i).setDuration(duration);
+                break;
+            }
+        }
+    }
     public void deleteFilm(String title) {
         Iterator<Film> iterator = list.iterator();
         while (iterator.hasNext()) {
