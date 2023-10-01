@@ -30,11 +30,11 @@ public class UserService{
         return userDao.getAllUsers();
     }
     public void initialize(){
-        User administor=new User("admin",/*User.hashPassword("ynuinfo#777")*/"ynuinfo#777",AbstractAuthenticatedAction.Role.ADMINISTRATOR,0,null,0,null,0,0);
+        User administor=new User("admin",User.hashPassword("ynuinfo#777")/*"ynuinfo#777"*/,AbstractAuthenticatedAction.Role.ADMINISTRATOR,0,null,0,null,0,0);
         userDao.addUser(administor);
-        User manager=new User("manager",/*User.hashPassword("ynuinfo#777")*/"ynuinfo#777",AbstractAuthenticatedAction.Role.MANAGER,1,null,0,null,0,0);
+        User manager=new User("manager",User.hashPassword("ynuinfo#777")/*"ynuinfo#777"*/,AbstractAuthenticatedAction.Role.MANAGER,1,null,0,null,0,0);
         userDao.addUser(manager);
-        User receptionist=new User("receptionist",/*User.hashPassword("ynuinfo#777")*/"ynuinfo#777",AbstractAuthenticatedAction.Role.RECEPTIONIST,2,null,0,null,0,0);
+        User receptionist=new User("receptionist",User.hashPassword("ynuinfo#777")/*"ynuinfo#777"*/,AbstractAuthenticatedAction.Role.RECEPTIONIST,2,null,0,null,0,0);
         userDao.addUser(receptionist);
     }
 }

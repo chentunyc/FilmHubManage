@@ -100,7 +100,6 @@ public class User {
     public void addBuyTimeRecord(String record){
         buyTimeRecord.add(record);
     }
-    /*
     public static String hashPassword(String password) {
         try {
             // 创建SHA-256散列对象
@@ -128,6 +127,4 @@ public class User {
             return null;
         }
     }
-
-     */
 }

@@ -29,8 +29,8 @@ public class LoginAction extends AbstractAction{
             userName = scanner.nextLine();
             System.out.print("请输入密码:");
             password = scanner.nextLine();
-            //role = login(userName, User.hashPassword(password));
-            role = login(userName, password);
+            role = login(userName, User.hashPassword(password));
+            //role = login(userName, password);
             tryNumber++;
             if(tryNumber==5){
                 locked=true;
