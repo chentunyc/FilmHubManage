@@ -5,9 +5,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ChangeUserRoleAction extends AbstractAuthenticatedAction{
-    UserService userService=null;
-    GlobalState state =null;
-    Scanner scanner=null;
+    private UserService userService=null;
+    private GlobalState state =null;
+    private Scanner scanner=null;
     ChangeUserRoleAction(UserService userService, GlobalState state, Scanner scanner){
         this.state = state;
         this.userService=userService;

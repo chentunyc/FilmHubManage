@@ -1,11 +1,12 @@
 package com.mic.tech;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ListFilmAction extends AbstractAuthenticatedAction {
-    FilmService filmService = null;
-    GlobalState state = null;
-    Scanner scanner = null;
+    private FilmService filmService = null;
+    private GlobalState state = null;
+    private Scanner scanner = null;
 
     ListFilmAction(GlobalState state, FilmService filmService, Scanner scanner) {
         this.state = state;
@@ -23,36 +24,26 @@ public class ListFilmAction extends AbstractAuthenticatedAction {
 
     void perform() {
         if (state.getUserRole() == Role.MANAGER) {
-            Film film = null;
-            super.println("你可以选择用影片名称、导演、主演查询");
-            super.print("请输入TITLE/DIRECTOR/STARRING来选择查询方式:");
-            String selection = scanner.nextLine();
-            if (selection.equals("TITLE")) {
-                super.print("请输入具体的标题:");
-                String title = scanner.nextLine();
-                film = filmService.getFilmByFilmTitle(title);
-            }
-            if (selection.equals("DIRECTOR")) {
-                super.print("请输入具体的导演:");
-                String director = scanner.nextLine();
-                film = filmService.getFilmByFilmDirector(director);
-            }
-            if (selection.equals("STARRING")) {
-                super.print("请输入具体的主演:");
-                String starring = scanner.nextLine();
-                film = filmService.getFilmByFilmStarring(starring);
-            }
-            if (film != null) {
-                String title = film.getTitle();
-                String director = film.getDirector();
-                String starring = film.getStarring();
-                String synopsis = film.getSynopsis();
-                String duration = film.getDuration();
-                System.out.println(this.getActionName().toUpperCase() + "> ");
-                System.out.printf("%-15s %-15s %-15s %-15s %-3s", "title", "director", "starring", "synopsis", "duration");
-                System.out.println();
-                System.out.printf("%-15s %-15s %-15s %-15s %-3s", title, director, starring, synopsis, duration);
-                System.out.println();
+            List<Film>list=null;
+            super.println("你可以选择根据影片名称、导演、主演单独或者组合查询");
+            super.print("请输入TITLE/DIRECTOR/STARRING:");
+            String title = scanner.nextLine();
+            String director=scanner.nextLine();
+            String starring=scanner.nextLine();
+            list=filmService.getFilmByFilmInformation(title,director,starring);
+            if (list != null) {
+                for(Film film:list) {
+                    String titleN = film.getTitle();
+                    String directorN = film.getDirector();
+                    String starringN = film.getStarring();
+                    String synopsis = film.getSynopsis();
+                    String duration = film.getDuration();
+                    System.out.println(this.getActionName().toUpperCase() + "> ");
+                    System.out.printf("%-15s %-15s %-15s %-15s %-3s", "title", "director", "starring", "synopsis", "duration");
+                    System.out.println();
+                    System.out.printf("%-15s %-15s %-15s %-15s %-3s", titleN, directorN, starringN, synopsis, duration);
+                    System.out.println();
+                }
             } else {
                 super.println("你不是经理");
             }

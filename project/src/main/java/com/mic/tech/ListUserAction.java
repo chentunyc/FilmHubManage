@@ -3,9 +3,9 @@ package com.mic.tech;
 import java.util.Scanner;
 
 public class ListUserAction extends AbstractAuthenticatedAction{
-    GlobalState state =null;
-    UserService userService=null;
-    Scanner scanner=null;
+    private GlobalState state =null;
+    private UserService userService=null;
+    private Scanner scanner=null;
     ListUserAction(GlobalState state, UserService userService, Scanner scanner){
         this.state = state;
         this.userService=userService;

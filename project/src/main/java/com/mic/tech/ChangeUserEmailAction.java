@@ -3,9 +3,9 @@ package com.mic.tech;
 import java.util.Scanner;
 
 public class ChangeUserEmailAction extends AbstractAuthenticatedAction{
-    UserService userService=null;
-    GlobalState state =null;
-    Scanner scanner=null;
+    private UserService userService=null;
+    private GlobalState state =null;
+    private Scanner scanner=null;
     ChangeUserEmailAction(UserService userService, GlobalState state, Scanner scanner){
         this.state = state;
         this.userService=userService;

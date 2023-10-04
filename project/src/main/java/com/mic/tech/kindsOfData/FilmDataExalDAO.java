@@ -1,23 +1,19 @@
 package com.mic.tech.kindsOfData;
 import com.mic.tech.Film;
 import com.mic.tech.FilmDao;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class FilmDataExalDAO implements FilmDao {
     public FilmDataExalDAO(){
-            File file = new File(FILE_PATH);
-            if (!file.exists()) {
-                initializeExcelFile();
-            }
+        File file = new File(FILE_PATH);
+        if (!file.exists()) {
+            initializeExcelFile();
         }
+    }
     private static final String FILE_PATH = "E:\\homework\\code\\j\\FilmHubManage\\filmData.xlsx";
     public void addFilm(Film film) {
         try {
@@ -133,8 +129,9 @@ public class FilmDataExalDAO implements FilmDao {
         return null;
     }
 
-    public Film getFilmByFilmDirector(String director) {
+    public List<Film> getFilmByFilmInformation(String title, String director, String starring) {
         try {
+            List<Film>list=null;
             FileInputStream fileInputStream = new FileInputStream(FILE_PATH);
             Workbook workbook = new XSSFWorkbook(fileInputStream);
             Sheet sheet = workbook.getSheet("filmData");
@@ -144,43 +141,10 @@ public class FilmDataExalDAO implements FilmDao {
             }
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
+                String titleN=row.getCell(0).getStringCellValue();
                 String directorN=row.getCell(1).getStringCellValue();
-                if (directorN.equals(director)) {
-                    String title=row.getCell(0).getStringCellValue();
-                    String starring=row.getCell(2).getStringCellValue();
-                    String synopsis=row.getCell(3).getStringCellValue();
-                    String duration=row.getCell(4).getStringCellValue();
-                    Film film=new Film();
-                    film.setTitle(title);
-                    film.setDirector(director);
-                    film.setStarring(starring);
-                    film.setSynopsis(synopsis);
-                    film.setDuration(duration);
-                    return film;
-                }
-            }
-            fileInputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public Film getFilmByFilmStarring(String starring) {
-        try {
-            FileInputStream fileInputStream = new FileInputStream(FILE_PATH);
-            Workbook workbook = new XSSFWorkbook(fileInputStream);
-            Sheet sheet = workbook.getSheet("filmData");
-            Iterator<Row> rowIterator = sheet.iterator();
-            if (rowIterator.hasNext()) {
-                rowIterator.next();
-            }
-            while (rowIterator.hasNext()) {
-                Row row = rowIterator.next();
                 String starringN=row.getCell(2).getStringCellValue();
-                if (starringN.equals(starring)) {
-                    String title=row.getCell(0).getStringCellValue();
-                    String director=row.getCell(1).getStringCellValue();
+                if (titleN.equals(title)||directorN.equals(director)||starringN.equals(starringN)) {
                     String synopsis=row.getCell(3).getStringCellValue();
                     String duration=row.getCell(4).getStringCellValue();
                     Film film=new Film();
@@ -189,16 +153,16 @@ public class FilmDataExalDAO implements FilmDao {
                     film.setStarring(starring);
                     film.setSynopsis(synopsis);
                     film.setDuration(duration);
-                    return film;
+                    list.add(film);
                 }
             }
             fileInputStream.close();
+            return list;
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
     }
-
     public List<Film> getAllFilms() {
         List<Film> list = new ArrayList<>();
         try {

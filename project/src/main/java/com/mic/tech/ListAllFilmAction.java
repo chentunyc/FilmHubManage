@@ -1,8 +1,8 @@
 package com.mic.tech;
 
 public class ListAllFilmAction extends AbstractAuthenticatedAction{
-    GlobalState state=null;
-    FilmService filmService=null;
+    private GlobalState state=null;
+    private FilmService filmService=null;
     ListAllFilmAction(GlobalState state,FilmService filmService){
         this.state=state;
         this.filmService=filmService;

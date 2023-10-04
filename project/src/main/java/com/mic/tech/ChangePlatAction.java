@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class ChangePlatAction extends AbstractAuthenticatedAction {
-    PlatService platService = null;
-    FilmService filmService = null;
-    GlobalState state = null;
-    Scanner scanner = null;
+    private PlatService platService = null;
+    private FilmService filmService = null;
+    private GlobalState state = null;
+    private Scanner scanner = null;
 
     ChangePlatAction(GlobalState state, FilmService filmService, PlatService platService, Scanner scanner) {
         this.state = state;

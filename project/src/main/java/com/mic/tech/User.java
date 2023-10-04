@@ -43,10 +43,11 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password=password;
-        //this.password=hashPassword(password);
+        this.password=hashPassword(password);
     }
-
+    public void setPasswordIndex(String password){
+        this.password=password;
+    }
     public Role getRole() {
         return role;
     }

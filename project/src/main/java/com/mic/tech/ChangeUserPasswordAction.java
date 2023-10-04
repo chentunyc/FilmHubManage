@@ -3,12 +3,12 @@ package com.mic.tech;
 import java.util.Scanner;
 
 public class ChangeUserPasswordAction extends AbstractAuthenticatedAction{
-    UserService userService=null;
-    GlobalState state =null;
-    Scanner scanner=null;
-    String userName;
-    User user;
-    String password;
+    private UserService userService=null;
+    private GlobalState state =null;
+    private Scanner scanner=null;
+    private String userName;
+    private User user;
+    private String password;
     ChangeUserPasswordAction(UserService userService, GlobalState state, Scanner scanner){
         this.state = state;
         this.userService=userService;

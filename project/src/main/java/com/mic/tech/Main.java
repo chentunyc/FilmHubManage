@@ -98,7 +98,7 @@ public class Main {
         System.out.println("欢迎您使用本程序");
         System.out.println("请输入LIST来获取可以执行的操作列表");
         System.out.println("有的操作需要先登录才能执行");
-        while(this.globalState.isRuning()){
+        while(this.globalState.getIsRuning()){
             String username = this.globalState.getUserName();
             username = username != null
                     ? "登录者: " + username.toLowerCase() + "@" + this.globalState.getUserRole().toString()

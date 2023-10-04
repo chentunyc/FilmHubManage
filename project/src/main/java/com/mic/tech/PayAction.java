@@ -6,13 +6,13 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class PayAction extends AbstractAuthenticatedAction{
-    int seatI,seatJ;
-    Double priceNumber;
-    User user;
-    Scanner scanner;
-    Plat plat;
-    Role role;
-    UserService userService=null;
+    private int seatI,seatJ;
+    private Double priceNumber;
+    private User user;
+    private Scanner scanner;
+    private Plat plat;
+    private Role role;
+    private UserService userService=null;
     public String getDescription() {
         return "付款 only customers";
     }

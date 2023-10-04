@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerRegisterAction extends AbstractAuthenticatedAction {
-    UserService userService = null;
-    Scanner scanner = null;
-    GlobalState state = null;
+    private UserService userService = null;
+    private Scanner scanner = null;
+    private GlobalState state = null;
 
     CustomerRegisterAction(GlobalState state, UserService userService, Scanner scanner) {
         this.state = state;
@@ -92,7 +92,7 @@ public class CustomerRegisterAction extends AbstractAuthenticatedAction {
             user.setregistrationTime(scanner.nextInt());
 
             user.setId(userService.getAllUsers().size());
-
+            user.setLock("false");
             userService.addUser(user);
         } else
             super.println("你不是管理员无法执行此操作");

@@ -3,9 +3,9 @@ package com.mic.tech;
 import java.util.Scanner;
 
 public class FilmAddAction extends AbstractAuthenticatedAction{
-    FilmService filmService=null;
-    GlobalState state=null;
-    Scanner scanner=null;
+    private FilmService filmService=null;
+    private GlobalState state=null;
+    private Scanner scanner=null;
     FilmAddAction(GlobalState state,FilmService filmService,Scanner scanner){
         this.state=state;
         this.filmService=filmService;

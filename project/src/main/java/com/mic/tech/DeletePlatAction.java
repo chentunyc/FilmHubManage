@@ -3,9 +3,9 @@ package com.mic.tech;
 import java.util.Scanner;
 
 public class DeletePlatAction extends AbstractAuthenticatedAction{
-    PlatService platService=null;
-    GlobalState state=null;
-    Scanner scanner=null;
+    private PlatService platService=null;
+    private GlobalState state=null;
+    private Scanner scanner=null;
     DeletePlatAction(GlobalState state,PlatService platService,Scanner scanner){
         this.state=state;
         this.platService=platService;

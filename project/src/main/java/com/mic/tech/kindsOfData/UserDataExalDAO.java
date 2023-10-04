@@ -133,7 +133,7 @@ public class UserDataExalDAO implements UserDAO {
                     int purchaseNumber=Integer.parseInt(purchaseNumberStr);
                     User user = new User();
                     user.setUsername(userName);
-                    user.setPassword(password);
+                    user.setPasswordIndex(password);
                     user.setRole(role);
                     user.setId(id);
                     user.setEmail(email);
@@ -179,7 +179,7 @@ public class UserDataExalDAO implements UserDAO {
                     int purchaseNumber=Integer.parseInt(purchaseNumberStr);
                     User user = new User();
                     user.setUsername(userName);
-                    user.setPassword(password);
+                    user.setPasswordIndex(password);
                     user.setRole(role);
                     user.setId(id);
                     user.setEmail(email);
@@ -226,7 +226,7 @@ public class UserDataExalDAO implements UserDAO {
                     int purchaseNumber=Integer.parseInt(purchaseNumberStr);
                     User user = new User();
                     user.setUsername(userName);
-                    user.setPassword(password);
+                    user.setPasswordIndex(password);
                     user.setRole(role);
                     user.setId(id);
                     user.setEmail(email);
@@ -274,7 +274,7 @@ public class UserDataExalDAO implements UserDAO {
                 int purchaseNumber=Integer.parseInt(purchaseNumberStr);
                 User user = new User();
                 user.setUsername(userName);
-                user.setPassword(password);
+                user.setPasswordIndex(password);
                 user.setRole(role);
                 user.setId(id);
                 user.setEmail(email);

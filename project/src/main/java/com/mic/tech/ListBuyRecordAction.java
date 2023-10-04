@@ -3,9 +3,9 @@ package com.mic.tech;
 import java.util.List;
 
 public class ListBuyRecordAction extends AbstractAuthenticatedAction {
-    GlobalState state = null;
-    PlatService platService = null;
-    UserService userService = null;
+    private GlobalState state = null;
+    private PlatService platService = null;
+    private UserService userService = null;
     ListBuyRecordAction(GlobalState state, PlatService platService, UserService userService){
         this.state=state;
         this.platService=platService;

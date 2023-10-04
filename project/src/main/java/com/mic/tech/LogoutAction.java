@@ -3,7 +3,7 @@ public class LogoutAction extends AbstractAuthenticatedAction{
     LogoutAction(GlobalState state){
         this.state=state;
     }
-    GlobalState state=null;
+    private GlobalState state=null;
     public String getActionName(){
         return "LOGOUT";
     }

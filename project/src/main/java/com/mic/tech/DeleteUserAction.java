@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class DeleteUserAction extends AbstractAuthenticatedAction{
-    UserService userService=null;
-    GlobalState state=null;
-    Scanner scanner=null;
+    private  UserService userService=null;
+    private GlobalState state=null;
+    private  Scanner scanner=null;
     DeleteUserAction(GlobalState state,UserService userService,Scanner scanner){
         this.state=state;
         this.userService=userService;

@@ -3,10 +3,10 @@ package com.mic.tech;
 import java.util.Scanner;
 
 public class PlatAddAction extends AbstractAuthenticatedAction{
-    PlatService platService=null;
-    FilmService filmService=null;
-    GlobalState state=null;
-    Scanner scanner=null;
+    private PlatService platService=null;
+    private FilmService filmService=null;
+    private  GlobalState state=null;
+    private Scanner scanner=null;
     PlatAddAction(GlobalState state,FilmService filmService,PlatService platService,Scanner scanner){
         this.state=state;
         this.filmService=filmService;

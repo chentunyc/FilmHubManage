@@ -7,7 +7,6 @@ public interface FilmDao {
     void updateFilm(Film film,String title);
     void deleteFilm(String title);
     Film getFilmByFilmTitle(String title);
-    Film getFilmByFilmDirector(String director);
-    Film getFilmByFilmStarring(String starring);
+    List getFilmByFilmInformation(String title,String director,String starring);
     List<Film> getAllFilms();
 }

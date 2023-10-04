@@ -25,3 +25,4 @@ userSeivice的delete方法错误，arraylist不能直接遍历删除其中的元
 # 1.4 将对象状态保存到exal中
 
 用email实现DAO接口
+# 1.5 将对象状态保存到exal中

@@ -1,8 +1,8 @@
 package com.mic.tech;
 
 public class ListAllUserAction extends AbstractAuthenticatedAction{
-    GlobalState state =null;
-    UserService userService=null;
+    private GlobalState state =null;
+    private UserService userService=null;
     ListAllUserAction(GlobalState state, UserService userService){
         this.state = state;
         this.userService=userService;

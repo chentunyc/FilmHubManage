@@ -3,9 +3,9 @@ package com.mic.tech;
 import java.util.Scanner;
 
 public class ListPlatAction extends AbstractAuthenticatedAction{
-    GlobalState state=null;
-    PlatService platService=null;
-    Scanner scanner=null;
+    private GlobalState state=null;
+    private PlatService platService=null;
+    private  Scanner scanner=null;
     ListPlatAction(GlobalState state,PlatService platService,Scanner scanner){
         this.state=state;
         this.platService=platService;

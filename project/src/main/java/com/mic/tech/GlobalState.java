@@ -1,9 +1,9 @@
 package com.mic.tech;
 import com.mic.tech.AbstractAuthenticatedAction.Role;
 public class GlobalState {
-    boolean isRuning=true;
+    private boolean isRuning=true;
     private String userName=null;
-    boolean isRuning(){
+    boolean getIsRuning(){
         return isRuning;
     }
     String getUserName(){
@@ -12,7 +12,7 @@ public class GlobalState {
     Role getUserRole(){
         return AbstractAuthenticatedAction.currentRole;
     }
-    void setState(){
+    void setIsRuning(){
         isRuning=false;
     }
     void setUserName(String userName){

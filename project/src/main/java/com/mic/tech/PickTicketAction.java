@@ -9,10 +9,10 @@ public class PickTicketAction extends AbstractAuthenticatedAction{
         this.userService=userService;
         this.scanner=scanner;
     }
-    GlobalState state=null;
-    PlatService platService=null;
-    UserService userService=null;
-    Scanner scanner=null;
+    private  GlobalState state=null;
+    private  PlatService platService=null;
+    private UserService userService=null;
+    private Scanner scanner=null;
     public String getDescription() {
         return "你可以取票 only customers";
     }

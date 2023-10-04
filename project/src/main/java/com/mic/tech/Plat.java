@@ -21,27 +21,21 @@ public class Plat{
     public int getPrice() {
         return price;
     }
-
     public String getScreeningHall() {
         return screeningHall;
     }
-
     public String getTime() {
         return time;
     }
-
     public void setPrice(int price) {
         this.price = price;
     }
-
     public void setScreeningHall(String screeningHall) {
         this.screeningHall = screeningHall;
     }
-
     public void setTime(String time) {
         this.time = time;
     }
-
     public Film getFilm() {
         return film;
     }
@@ -61,15 +55,12 @@ public class Plat{
     public void setSeat(String[][] seat) {
         this.seat = seat;
     }
-
     public int getAvailableSeat() {
         return availableSeat;
     }
-
     public void setAvailableSeat(int availableSeat) {
         this.availableSeat = availableSeat;
     }
-
     public int getTotalNumberSeat() {
         return totalNumberSeat;
     }
