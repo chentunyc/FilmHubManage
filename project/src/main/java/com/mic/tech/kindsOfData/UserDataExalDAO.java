@@ -1,13 +1,12 @@
 package com.mic.tech.kindsOfData;
-import com.mic.tech.User;
-import com.mic.tech.UserDAO;
 import com.mic.tech.AbstractAuthenticatedAction.Role;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.*;
 import java.io.*;
 public class UserDataExalDAO implements UserDAO {
     public UserDataExalDAO(){
@@ -88,17 +87,21 @@ public class UserDataExalDAO implements UserDAO {
             Workbook workbook = new XSSFWorkbook(fileInputStream);
             Sheet sheet = workbook.getSheet("userData");
             Iterator<Row> rowIterator = sheet.iterator();
+
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
+                int rowIndex = row.getRowNum();
                 String username = row.getCell(0).getStringCellValue();
                 if (username.equals(userName)) {
-                    rowIterator.remove();
+                    sheet.removeRow(row); //删除行对象
+                    if(rowIndex+1<sheet.getLastRowNum())
+                        sheet.shiftRows(rowIndex+1, sheet.getLastRowNum(), -1); //移动后续行，以填补删除行的空缺
                 }
             }
             FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
             workbook.write(fileOutputStream);
-            fileInputStream.close();
             fileOutputStream.close();
+            fileInputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

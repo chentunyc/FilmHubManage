@@ -1,9 +1,12 @@
 package com.mic.tech;
-
-import com.mic.tech.kindsOfData.FilmDataExalDAO;
-import com.mic.tech.kindsOfData.PlatDataExalDAO;
-import com.mic.tech.kindsOfData.UserDataExalDAO;
-
+import com.mic.tech.action.ListAction;
+import com.mic.tech.action.QuitAction;
+import com.mic.tech.action.SoldTicketAction;
+import com.mic.tech.action.customerAction.*;
+import com.mic.tech.action.filmAction.*;
+import com.mic.tech.action.platAction.*;
+import com.mic.tech.action.userAction.*;
+import com.mic.tech.kindsOfData.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;

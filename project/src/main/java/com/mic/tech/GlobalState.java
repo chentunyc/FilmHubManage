@@ -3,25 +3,25 @@ import com.mic.tech.AbstractAuthenticatedAction.Role;
 public class GlobalState {
     private boolean isRuning=true;
     private String userName=null;
-    boolean getIsRuning(){
+    public boolean getIsRuning(){
         return isRuning;
     }
-    String getUserName(){
+    public String getUserName(){
         return userName;
     }
-    Role getUserRole(){
+    public Role getUserRole(){
         return AbstractAuthenticatedAction.currentRole;
     }
-    void setIsRuning(){
+    public void setIsRuning(){
         isRuning=false;
     }
-    void setUserName(String userName){
+    public void setUserName(String userName){
         this.userName=userName;
     }
-    void setRole(Role role){
+    public void setRole(Role role){
         AbstractAuthenticatedAction.currentRole=role;
     }
-    void setIsAuthenticated(boolean isAuthenticated){
+    public void setIsAuthenticated(boolean isAuthenticated){
         AbstractAuthenticatedAction.isAuthenticated=isAuthenticated;
     }
 }

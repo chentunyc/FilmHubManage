@@ -1,7 +1,4 @@
 package com.mic.tech.kindsOfData;
-import com.mic.tech.FilmDao;
-import com.mic.tech.Plat;
-import com.mic.tech.PlatDAO;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import java.io.*;
@@ -93,9 +90,12 @@ public class PlatDataExalDAO implements PlatDAO {
             Iterator<Row> rowIterator = sheet.iterator();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
+                int rowIndex = row.getRowNum();
                 String timeNow = row.getCell(2).getStringCellValue();
                 if (time.equals(timeNow)) {
-                    rowIterator.remove();
+                    sheet.removeRow(row); //删除行对象
+                    if(rowIndex+1<sheet.getLastRowNum())
+                        sheet.shiftRows(rowIndex+1, sheet.getLastRowNum(), -1); //移动后续行，以填补删除行的空缺
                 }
             }
             FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
@@ -122,7 +122,7 @@ public class PlatDataExalDAO implements PlatDAO {
                 if (titleN.equals(title) && timeN.equals(time)) {
                     String screeningHall = row.getCell(0).getStringCellValue();
                     String priceStr = row.getCell(1).getStringCellValue();
-                    int price = Integer.parseInt(priceStr);
+                    double price = Double.parseDouble(priceStr);
                     String totalNumberStr = row.getCell(4).getStringCellValue();
                     int totalNumberSeat = Integer.parseInt(totalNumberStr);
                     String totalAvailableStr = row.getCell(5).getStringCellValue();
@@ -172,7 +172,7 @@ public class PlatDataExalDAO implements PlatDAO {
                             if(ticketIdN[i][j].equals(ticketId)) {
                                 String screeningHall = row.getCell(0).getStringCellValue();
                                 String priceStr = row.getCell(1).getStringCellValue();
-                                int price = Integer.parseInt(priceStr);
+                                double price = Double.parseDouble(priceStr);
                                 String time = row.getCell(2).getStringCellValue();
                                 String title = row.getCell(3).getStringCellValue();
 
@@ -220,7 +220,7 @@ public class PlatDataExalDAO implements PlatDAO {
                 Row row = rowIterator.next();
                 String screeningHall = row.getCell(0).getStringCellValue();
                 String priceStr = row.getCell(1).getStringCellValue();
-                int price = Integer.parseInt(priceStr);
+                double price = Double.parseDouble(priceStr);
                 String time = row.getCell(2).getStringCellValue();
                 String title = row.getCell(3).getStringCellValue();
 

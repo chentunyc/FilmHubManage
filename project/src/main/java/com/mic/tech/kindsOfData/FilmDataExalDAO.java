@@ -1,6 +1,4 @@
 package com.mic.tech.kindsOfData;
-import com.mic.tech.Film;
-import com.mic.tech.FilmDao;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -82,9 +80,12 @@ public class FilmDataExalDAO implements FilmDao {
             Iterator<Row> rowIterator = sheet.iterator();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
+                int rowIndex = row.getRowNum();
                 String titleNow = row.getCell(0).getStringCellValue();
                 if (title.equals(titleNow)) {
-                    rowIterator.remove();
+                    sheet.removeRow(row); //删除行对象
+                    if(rowIndex+1<sheet.getLastRowNum())
+                        sheet.shiftRows(rowIndex+1, sheet.getLastRowNum(), -1); //移动后续行，以填补删除行的空缺
                 }
             }
             FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
