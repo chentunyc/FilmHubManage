@@ -5,7 +5,7 @@ import java.util.List;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 public class User {
-    User(String username,String password,Role role,int id,String telephoneNumber,int registrationTime,String email,int purchaseNumber,int purchaseAmount){
+    public User(String username,String password,Role role,int id,String telephoneNumber,int registrationTime,String email,int purchaseNumber,int purchaseAmount,String lock){
         this.username=username;
         this.password=password;
         this.role=role;
@@ -15,8 +15,9 @@ public class User {
         this.email=email;
         this.purchaseAmount=purchaseAmount;
         this.purchaseNumber=purchaseNumber;
+        this.lock=lock;
     }
-    User(){}
+    public User(){}
     private String username = null;
     private String password = null;
     private Role role = null;
@@ -25,7 +26,8 @@ public class User {
     private int registrationTime=0;
     private String email=null;
     private int purchaseNumber=0;
-    private int purchaseAmount=0;
+    private double purchaseAmount=0;
+    private String lock=null;
     private List <String> buyRecord=new ArrayList<>();
     private List <String> buyTimeRecord=new ArrayList<>();
     public String getUsername() {
@@ -82,10 +84,10 @@ public class User {
     public int getPurchaseNumber() {
         return purchaseNumber;
     }
-    public void setPurchaseAmount(int purchaseAmount){
+    public void setPurchaseAmount(double purchaseAmount){
         this.purchaseAmount=purchaseAmount;
     }
-    public int getPurchaseAmount(){
+    public double getPurchaseAmount(){
         return purchaseAmount;
     }
     public List getBuyRecord(){
@@ -100,6 +102,14 @@ public class User {
     public void addBuyTimeRecord(String record){
         buyTimeRecord.add(record);
     }
+    public void setLock(String lock){
+        this.lock=lock;
+    }
+
+    public String getLock() {
+        return lock;
+    }
+
     public static String hashPassword(String password) {
         try {
             // 创建SHA-256散列对象

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/AddTwoNumbers.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/AddTwoNumbers.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/AddTwoNumbers.java" />
+              <option name="titleSlug" value="add-two-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/BinaryTreeMaximumPathSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/BinaryTreeMaximumPathSum.md" />
+              <option name="frontendQuestionId" value="leetcode.cn124" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/BinaryTreeMaximumPathSum.java" />
+              <option name="titleSlug" value="binary-tree-maximum-path-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/CombinationSumIii.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/CombinationSumIii.md" />
+              <option name="frontendQuestionId" value="leetcode.cn216" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/CombinationSumIii.java" />
+              <option name="titleSlug" value="combination-sum-iii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/CombinationSumIv.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/CombinationSumIv.md" />
+              <option name="frontendQuestionId" value="leetcode.cn377" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/CombinationSumIv.java" />
+              <option name="titleSlug" value="combination-sum-iv" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/ConstructBinaryTreeFromInorderAndPostorderTraversal.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/ConstructBinaryTreeFromInorderAndPostorderTraversal.md" />
+              <option name="frontendQuestionId" value="leetcode.cn106" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/ConstructBinaryTreeFromInorderAndPostorderTraversal.java" />
+              <option name="titleSlug" value="construct-binary-tree-from-inorder-and-postorder-traversal" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/DeleteOperationForTwoStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/DeleteOperationForTwoStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.cn583" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/DeleteOperationForTwoStrings.java" />
+              <option name="titleSlug" value="delete-operation-for-two-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/LastStoneWeightIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/LastStoneWeightIi.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1049" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/LastStoneWeightIi.java" />
+              <option name="titleSlug" value="last-stone-weight-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/LetterCombinationsOfAPhoneNumber.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/LetterCombinationsOfAPhoneNumber.md" />
+              <option name="frontendQuestionId" value="leetcode.cn17" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/LetterCombinationsOfAPhoneNumber.java" />
+              <option name="titleSlug" value="letter-combinations-of-a-phone-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/LongestCommonSubsequence.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/LongestCommonSubsequence.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1143" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/LongestCommonSubsequence.java" />
+              <option name="titleSlug" value="longest-common-subsequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/MinimumAsciiDeleteSumForTwoStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/MinimumAsciiDeleteSumForTwoStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.cn712" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/MinimumAsciiDeleteSumForTwoStrings.java" />
+              <option name="titleSlug" value="minimum-ascii-delete-sum-for-two-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/NQueensIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/NQueensIi.md" />
+              <option name="frontendQuestionId" value="leetcode.cn52" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/NQueensIi.java" />
+              <option name="titleSlug" value="n-queens-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/NumberOfLongestIncreasingSubsequence.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/NumberOfLongestIncreasingSubsequence.md" />
+              <option name="frontendQuestionId" value="leetcode.cn673" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/NumberOfLongestIncreasingSubsequence.java" />
+              <option name="titleSlug" value="number-of-longest-increasing-subsequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/OnesAndZeroes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/OnesAndZeroes.md" />
+              <option name="frontendQuestionId" value="leetcode.cn474" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/OnesAndZeroes.java" />
+              <option name="titleSlug" value="ones-and-zeroes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/PerfectSquares.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/PerfectSquares.md" />
+              <option name="frontendQuestionId" value="leetcode.cn279" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/PerfectSquares.java" />
+              <option name="titleSlug" value="perfect-squares" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/ProfitableSchemes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/ProfitableSchemes.md" />
+              <option name="frontendQuestionId" value="leetcode.cn879" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/ProfitableSchemes.java" />
+              <option name="titleSlug" value="profitable-schemes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/ReverseLinkedListIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/ReverseLinkedListIi.md" />
+              <option name="frontendQuestionId" value="leetcode.cn92" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/ReverseLinkedListIi.java" />
+              <option name="titleSlug" value="reverse-linked-list-ii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/TwoSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/TwoSum.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/TwoSum.java" />
+              <option name="titleSlug" value="two-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/UniquePathsIii.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/UniquePathsIii.md" />
+              <option name="frontendQuestionId" value="leetcode.cn980" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/UniquePathsIii.java" />
+              <option name="titleSlug" value="unique-paths-iii" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/VerbalArithmeticPuzzle.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/doc/content/VerbalArithmeticPuzzle.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1307" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../../../作业/j/leetcode-question/src/main/java/com/chentun/leetcode/editor/cn/VerbalArithmeticPuzzle.java" />
+              <option name="titleSlug" value="verbal-arithmetic-puzzle" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -29,9 +29,11 @@ public class ForgetUserPasswordAction extends AbstractAction{
                 String email = scanner.nextLine();
                 User user = userService.getUserByUserName(userName);
                 user.setPassword("123456789");
+                userService.updateUser(user);
         }
     }
     // 发送邮件的方法
+    /*
     private static void sendEmail(String email,String password) {
         // 邮件服务器配置信息
         String host = "smtp.qq.com"; // QQ邮箱服务器地址
@@ -69,4 +71,5 @@ public class ForgetUserPasswordAction extends AbstractAction{
             e.printStackTrace();
         }
     }
+     */
 }

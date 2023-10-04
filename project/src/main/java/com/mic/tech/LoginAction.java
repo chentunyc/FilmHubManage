@@ -33,7 +33,8 @@ public class LoginAction extends AbstractAction{
             //role = login(userName, password);
             tryNumber++;
             if(tryNumber==5){
-                locked=true;
+                userService.getUserByUserName(userName).setLock("true");
+                System.out.println("失败超过五次，账号被锁定");
                 break;
             }
         }
@@ -50,8 +51,12 @@ public class LoginAction extends AbstractAction{
     }
     private Role login(String userName,String password){
         User user = this.userService.getUserByUserName(userName);
-        if (user != null && user.getPassword().equals(password)) {
+        if (user != null && user.getPassword().equals(password)&&user.getLock().equals("false")) {
             return user.getRole();
+        }
+        else if (user != null && user.getPassword().equals(password)&&user.getLock().equals("true")){
+            System.out.println("账户已经被锁定");
+            return null;
         }
         else{
             return null;

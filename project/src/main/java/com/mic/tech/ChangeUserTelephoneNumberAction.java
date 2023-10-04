@@ -25,7 +25,8 @@ public class ChangeUserTelephoneNumberAction extends AbstractAuthenticatedAction
                 super.print("请输入新的用户手机号");
                 String telephoneNumber = scanner.nextLine();
                 user.setTelephoneNumber(telephoneNumber);
-                userService.updateUser(user,user.getPassword(),user.getRole(),user.getEmail(),telephoneNumber, user.getPurchaseNumber(),user.getPurchaseAmount());
+                user.setTelephoneNumber(telephoneNumber);
+                this.userService.updateUser(user);
                 super.println("已经成功更改用户手机号");
             }
         }

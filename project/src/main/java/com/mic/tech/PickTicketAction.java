@@ -29,7 +29,7 @@ public class PickTicketAction extends AbstractAuthenticatedAction{
             Plat plat=platService.getPlatByTicketId(ticketId);
             for(int i=0;i<7;i++) {
                 for (int j = 0; j < 12; j++) {
-                    if(plat.getIsPutout(i,j).equals("hasBuied")&&plat.getTicketID(i,j).equals(ticketId)){
+                    if(plat.getIsPutoutBySeat(i,j).equals("hasBuied")&&plat.getTicketIDBySeat(i,j).equals(ticketId)){
                         System.out.printf("%-13s %-5s %-15s %-3s", "screeningHall", "time", "title", "duration");
                         System.out.println();
                         String screeningHall=plat.getScreeningHall();
@@ -44,9 +44,9 @@ public class PickTicketAction extends AbstractAuthenticatedAction{
                         System.out.printf("%-13s %-5s %-15s %-3s", screeningHall, time, title, duration);
                         System.out.println();
                         System.out.println("座位"+"x"+i+"y"+j);
-                        plat.setIsPutout(i,j,"hasTaken");
+                        plat.setIsPutoutBySeat(i,j,"hasTaken");
                     }
-                    else if(plat.getIsPutout(i,j).equals("hasTaken")&&plat.getTicketID(i,j).equals(ticketId)){
+                    else if(plat.getIsPutoutBySeat(i,j).equals("hasTaken")&&plat.getTicketIDBySeat(i,j).equals(ticketId)){
                         super.println("票已经被取走，票只能取一次");
                     }
                 }

@@ -40,7 +40,8 @@ public class ChangeUserRoleAction extends AbstractAuthenticatedAction{
                 super.print("请输入你想转换的角色的数字: ");
                 String roleNumber = scanner.nextLine();
                 if (roles.containsKey(roleNumber)) {
-                    userService.updateUser(user,user.getPassword(),roles.get(roleNumber),user.getEmail(), user.getTelephoneNumber(), user.getPurchaseNumber(),user.getPurchaseAmount());
+                    user.setRole((AbstractAuthenticatedAction.Role)roles.get(roleNumber));
+                    this.userService.updateUser(user);
                     super.println("已经成功更改用户类型");
                 } else {
                     super.println("数字非法");

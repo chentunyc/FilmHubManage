@@ -38,7 +38,8 @@ public class ChangeUserPasswordAction extends AbstractAuthenticatedAction{
     void changePassword(){
         super.print("请输入新的密码");
         password = scanner.nextLine();
-        userService.updateUser(user,password,user.getRole(),user.getEmail(), user.getTelephoneNumber(), user.getPurchaseNumber(),user.getPurchaseAmount());
+        this.user.setPassword(this.password);
+        this.userService.updateUser(this.user);
         super.println("已经成功更改密码");
     }
     public String getDescription(){

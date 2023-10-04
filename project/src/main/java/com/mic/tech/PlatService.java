@@ -10,19 +10,15 @@ public class PlatService{
     public void addPlat(Plat plat) {
         platDao.addPlat(plat);
     }
-
-    public void updateFlat(Plat plat) {
-        platDao.updatePlat(plat);
-    }
-    public void updateFlatByData(Plat plat, String screeningHall, int price, String time, Film film,String seat[][]){
-        platDao.updatePlatByData(plat,screeningHall,price,time,film,seat);
+    public void updatePlat(Plat plat,String time) {
+        platDao.updatePlat(plat,time);
     }
     public void deleteFlat(String time) {
         platDao.deletePlat(time);
     }
 
     public Plat getFlatBYTimeTitle(String time, String title) {
-        return platDao.getPlatBYTimeTitle(time,title);
+        return platDao.getPlatByTimeTitle(time,title);
     }
     public Plat getPlatByTicketId(String ticketId){
         return platDao.getPlatByTicketId(ticketId);

@@ -60,7 +60,7 @@ public class ListUserAction extends AbstractAuthenticatedAction{
                     String roleName = role.name();
                     String telephoneNumber = user.getTelephoneNumber();
                     int registrationTime = user.getRegistrationTime();
-                    int purchaseAmount = user.getPurchaseAmount();
+                    double purchaseAmount = user.getPurchaseAmount();
                     int purchaseNumber = user.getPurchaseNumber();
                     String email = user.getEmail();
                     System.out.println(this.getActionName().toUpperCase() + "> ");

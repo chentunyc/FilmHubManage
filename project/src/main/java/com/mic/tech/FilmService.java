@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class FilmService implements FilmDao{
+public class FilmService{
     FilmDao filmDao=null;
     FilmService(FilmDao filmDao){
         this.filmDao=filmDao;
@@ -13,8 +13,8 @@ public class FilmService implements FilmDao{
         filmDao.addFilm(film);
     }
 
-    public void updateFilm(Film film) {
-        filmDao.updateFilm(film);
+    public void updateFilm(Film film,String title) {
+        filmDao.updateFilm(film,title);
     }
 
     public void deleteFilm(String title) {
@@ -32,9 +32,7 @@ public class FilmService implements FilmDao{
     public Film getFilmByFilmStarring(String starring) {
         return filmDao.getFilmByFilmStarring(starring);
     }
-    public void updateFilmByData(Film film,String title,String director,String starring,String synopsis,String duration){
-        filmDao.updateFilmByData(film,title,director,starring,synopsis,duration);
-    }
+
     public List<Film> getAllFilms() {
         return filmDao.getAllFilms();
     }

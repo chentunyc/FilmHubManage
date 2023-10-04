@@ -9,7 +9,7 @@ public class Plat{
     private String isPutout[][]=new String[7][12];
     private int totalNumberSeat =84;
     private int availableSeat=84;
-    Plat(){
+    public Plat(){
         for(int i=0;i<7;i++){
             for (int j=0;j<12;j++){
                 seat[i][j]="O";
@@ -73,17 +73,29 @@ public class Plat{
     public int getTotalNumberSeat() {
         return totalNumberSeat;
     }
-
-    public void setTicketID(int i,int j,String ticketIDNumber) {
+    public void setTotalNumberSeat(int totalNumberSeat){
+        this.totalNumberSeat=totalNumberSeat;
+    }
+    public void setTicketIDBySeatId(int i, int j, String ticketIDNumber) {
         this.ticketID [i][j]=ticketIDNumber;
     }
-    public String getTicketID(int i,int j) {
+    public void setTicketID(String[][] ticketID){this.ticketID=ticketID;}
+    public String getTicketIDBySeat(int i, int j) {
         return ticketID[i][j];
     }
-    public String getIsPutout(int i,int j){
+    public String [][]getTicketID() {
+        return ticketID;
+    }
+    public String getIsPutoutBySeat(int i, int j){
         return isPutout[i][j];
     }
-    public void setIsPutout(int i,int j,String isPutout) {
+    public String [][]getIsPutout(){
+        return isPutout;
+    }
+    public void setIsPutoutBySeat(int i, int j, String isPutout) {
         this.isPutout [i][j]=isPutout;
+    }
+    public void setIsPutout(String isPutout[][]) {
+        this.isPutout =isPutout;
     }
 }

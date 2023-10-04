@@ -12,19 +12,21 @@ public class PayAction extends AbstractAuthenticatedAction{
     Scanner scanner;
     Plat plat;
     Role role;
+    UserService userService=null;
     public String getDescription() {
         return "付款 only customers";
     }
     public String getActionName() {
         return "PAY";
     }
-    PayAction(int seatI,int seatJ,Plat plat,Double priceNumber,User user,Scanner scanner){
+    PayAction(int seatI,int seatJ,Plat plat,Double priceNumber,User user,Scanner scanner,UserService userService){
         this.seatI=seatI;
         this.seatJ=seatJ;
         this.plat=plat;
         this.priceNumber=priceNumber;
         this.user=user;
         this.scanner=scanner;
+        this.userService=userService;
     }
     void perform() {
         this.role=user.getRole();
@@ -56,15 +58,18 @@ public class PayAction extends AbstractAuthenticatedAction{
         }
         UUID uuid=UUID.randomUUID();
         String string=uuid.toString();
-        plat.setTicketID(seatI,seatJ,string);//号码
-        plat.setIsPutout(seatI,seatJ,"hasBuied");//说明购买
+        plat.setTicketIDBySeatId(seatI,seatJ,string);//号码
+        plat.setIsPutoutBySeat(seatI,seatJ,"hasBuied");//说明购买
         plat.setSeatBySeatId(seatI, seatJ, "X");//占座
         plat.setAvailableSeat(plat.getAvailableSeat() - 1);//可用座位-1
         LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String dateTimeString = currentDateTime.format(formatter);//当前时间
-        user.addBuyRecord(plat.getTicketID(seatI, seatJ));
+        user.addBuyRecord(plat.getTicketIDBySeat(seatI, seatJ));
         user.addBuyTimeRecord(dateTimeString);//购买记录
+        user.setPurchaseAmount(user.getPurchaseAmount()+priceNumber);
+        user.setPurchaseNumber(user.getPurchaseNumber()+1);
+        userService.updateUser(user);
         super.println("购买完成");
     }
 }

@@ -1,6 +1,6 @@
 package com.mic.tech;
 
-import com.sun.org.apache.bcel.internal.generic.SWITCH;
+
 
 import java.util.*;
 
@@ -44,47 +44,32 @@ public class ChangeFilmAction extends AbstractAuthenticatedAction{
                 String temporaryString = scanner.nextLine();
                 switch (roleNumber) {
                     case "1" :{
-                        /*
                         film.setTitle(temporaryString);
-                        filmService.updateFilm(film);
-                         */
-                        filmService.updateFilmByData(film,temporaryString,film.getDirector(),film.getStarring(),film.getSynopsis(),film.getDuration());
+                        filmService.updateFilm(film,title);
                         super.println("已经成功更改影片信息");
                         break;
                     }
                     case "2":{
-                        /*
                         film.setDirector(temporaryString);
-                        filmService.updateFilm(film);
-                         */
-                        filmService.updateFilmByData(film,film.getTitle(),temporaryString,film.getStarring(),film.getSynopsis(),film.getDuration());
+                        filmService.updateFilm(film,title);
                         super.println("已经成功更改影片信息");
                         break;
                     }
                     case "3": {
-                        /*
                         film.setStarring(temporaryString);
-                        filmService.updateFilm(film);
-                        */
-                        filmService.updateFilmByData(film,film.getTitle(),film.getDirector(),temporaryString,film.getSynopsis(),film.getDuration());
+                        filmService.updateFilm(film,title);
                         super.println("已经成功更改影片信息");
                         break;
                     }
                     case "4": {
-                        /*
                         film.setSynopsis(temporaryString);
-                        filmService.updateFilm(film);
-                         */
-                        filmService.updateFilmByData(film,film.getTitle(),film.getDirector(),film.getStarring(),temporaryString,film.getDuration());
+                        filmService.updateFilm(film,title);
                         super.println("已经成功更改影片信息");
                         break;
                     }
                     case  "5": {
-                        /*
                         film.setDuration(temporaryString);
-                        filmService.updateFilm(film);
-                         */
-                        filmService.updateFilmByData(film,film.getTitle(),film.getDirector(),film.getStarring(),film.getSynopsis(),temporaryString);
+                        filmService.updateFilm(film,title);
                         super.println("已经成功更改影片信息");
                         break;
                     }

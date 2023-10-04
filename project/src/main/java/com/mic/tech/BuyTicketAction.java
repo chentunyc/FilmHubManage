@@ -41,7 +41,7 @@ public class BuyTicketAction extends AbstractAuthenticatedAction{
                     super.print("是否执行购买操作y or n");
                     String isBuying = scanner.nextLine();
                     if (isBuying.equals("y")) {
-                        PayAction payAction = new PayAction(seatI, seatJ, plat, priceNumber, user, scanner);
+                        PayAction payAction = new PayAction(seatI, seatJ, plat, priceNumber, user, scanner,userService);
                         payAction.perform();
                         if(plat!=null) {
                             super.println("总座位数"+plat.getTotalNumberSeat());
@@ -58,7 +58,7 @@ public class BuyTicketAction extends AbstractAuthenticatedAction{
                                 System.out.println();
                             }
                         }
-                        super.println("票ID: " + plat.getTicketID(seatI, seatJ));
+                        super.println("票ID: " + plat.getTicketIDBySeat(seatI, seatJ));
                     } else {
                         plat.setSeatBySeatId(seatI, seatJ, "O");
                     }

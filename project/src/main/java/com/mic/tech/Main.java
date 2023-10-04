@@ -1,8 +1,8 @@
 package com.mic.tech;
 
-import com.mic.tech.kindsOfData.FilmDataDAO;
-import com.mic.tech.kindsOfData.PlatDataDAO;
-import com.mic.tech.kindsOfData.UserDataDAO;
+import com.mic.tech.kindsOfData.FilmDataExalDAO;
+import com.mic.tech.kindsOfData.PlatDataExalDAO;
+import com.mic.tech.kindsOfData.UserDataExalDAO;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -54,9 +54,9 @@ public class Main {
         scanner=new Scanner(System.in);
         globalState=new GlobalState();
         this.outPut("加载全局变量完成","成功");
-        userService=new UserService(new UserDataDAO());
-        filmService=new FilmService(new FilmDataDAO());
-        platService=new PlatService(new PlatDataDAO());
+        userService=new UserService(new UserDataExalDAO());
+        filmService=new FilmService(new FilmDataExalDAO());
+        platService=new PlatService(new PlatDataExalDAO(new FilmDataExalDAO()));
         this.outPut("服务模块加载完成","成功");
         this.actions.add(new ListAction(actions));
         this.actions.add(new QuitAction(scanner,globalState));

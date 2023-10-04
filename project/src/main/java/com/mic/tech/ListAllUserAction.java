@@ -39,7 +39,7 @@ public class ListAllUserAction extends AbstractAuthenticatedAction{
                     int id = user.getId();
                     String telephoneNumber = user.getTelephoneNumber();
                     int registrationTime = user.getRegistrationTime();
-                    int purchaseAmount = user.getPurchaseAmount();
+                    double purchaseAmount = user.getPurchaseAmount();
                     int purchaseNumber = user.getPurchaseNumber();
                     String email = user.getEmail();
                     System.out.printf("%-20s %-15d %-15d %-3s %-10s %-10s %-15s %-16s",roleName, purchaseAmount, purchaseNumber, id, username, email, telephoneNumber, registrationTime);

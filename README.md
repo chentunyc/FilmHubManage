@@ -22,3 +22,6 @@ userSeivice的delete方法错误，arraylist不能直接遍历删除其中的元
 用文件存储的方式实现DAO接口
 # 1.2 密码加密保存
 通过HASH进行密码加密
+# 1.4 将对象状态保存到exal中
+
+用email实现DAO接口
