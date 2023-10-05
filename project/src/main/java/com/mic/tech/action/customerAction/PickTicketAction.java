@@ -51,7 +51,8 @@ public class PickTicketAction extends AbstractAuthenticatedAction {
                         }
                         System.out.printf("%-13s %-13s %-15s %-3s", screeningHall, time, title, duration);
                         System.out.println();
-                        System.out.println("座位"+"x"+i+"y"+j);
+                        int cow=i+1;int row=j+1;
+                        System.out.println("座位"+"x"+cow+"y"+row);
                         plat.setIsPutoutBySeat(i,j,"hasTaken");
                         platService.updatePlat(plat,plat.getTime());
                     }
