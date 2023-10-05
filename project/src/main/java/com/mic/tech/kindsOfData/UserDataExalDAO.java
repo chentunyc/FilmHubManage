@@ -1,9 +1,7 @@
 package com.mic.tech.kindsOfData;
 import com.mic.tech.AbstractAuthenticatedAction.Role;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
@@ -44,6 +42,8 @@ public class UserDataExalDAO implements UserDAO {
                 newRow.createCell(7).setCellValue(String.valueOf(user.getPurchaseAmount()));
                 newRow.createCell(8).setCellValue(String.valueOf(user.getPurchaseNumber()));
                 newRow.createCell(9).setCellValue(user.getLock());
+                newRow.createCell(10).setCellValue(String.join(",",user.getBuyRecord()));
+                newRow.createCell(11).setCellValue(String.join(",",user.getBuyTimeRecord()));
                 FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
                 workbook.write(fileOutputStream);
                 fileInputStream.close();
@@ -70,6 +70,8 @@ public class UserDataExalDAO implements UserDAO {
                     row.getCell(7).setCellValue(String.valueOf(user.getPurchaseAmount()));
                     row.getCell(8).setCellValue(String.valueOf(user.getPurchaseNumber()));
                     row.getCell(9).setCellValue(user.getLock());
+                    row.getCell(10).setCellValue(String.join(",",user.getBuyRecord()));
+                    row.getCell(11).setCellValue(String.join(",",user.getBuyTimeRecord()));
                 }
             }
 
@@ -145,6 +147,18 @@ public class UserDataExalDAO implements UserDAO {
                     user.setPurchaseAmount(purchaseAmount);
                     user.setPurchaseNumber(purchaseNumber);
                     user.setLock(lock);
+                    String buyRecordStr= row.getCell(10).getStringCellValue();
+                    if(buyRecordStr!=null) {
+                        String[] buyRecordArray = buyRecordStr.split(",");
+                        List<String> buyRecord = new ArrayList<>(Arrays.asList(buyRecordArray));
+                        user.setBuyRecord(buyRecord);
+                    }
+                    String buyTimeRecordStr= row.getCell(11).getStringCellValue();
+                    if(buyTimeRecordStr!=null) {
+                        String[] buyTimeRecordArray = buyTimeRecordStr.split(",");
+                        List<String> buyTimeRecord = new ArrayList<>(Arrays.asList(buyTimeRecordArray));
+                        user.setBuyTimeRecord(buyTimeRecord);
+                    }
                     return user;
                 }
             }
@@ -192,6 +206,18 @@ public class UserDataExalDAO implements UserDAO {
                     user.setPurchaseNumber(purchaseNumber);
                     String lock=row.getCell(9).getStringCellValue();
                     user.setLock(lock);
+                    String buyRecordStr= row.getCell(10).getStringCellValue();
+                    if(buyRecordStr!=null) {
+                        String[] buyRecordArray = buyRecordStr.split(",");
+                        List<String> buyRecord = new ArrayList<>(Arrays.asList(buyRecordArray));
+                        user.setBuyRecord(buyRecord);
+                    }
+                    String buyTimeRecordStr= row.getCell(11).getStringCellValue();
+                    if(buyTimeRecordStr!=null) {
+                        String[] buyTimeRecordArray = buyTimeRecordStr.split(",");
+                        List<String> buyTimeRecord = new ArrayList<>(Arrays.asList(buyTimeRecordArray));
+                        user.setBuyTimeRecord(buyTimeRecord);
+                    }
                     return user;
                 }
             }
@@ -239,6 +265,18 @@ public class UserDataExalDAO implements UserDAO {
                     user.setPurchaseNumber(purchaseNumber);
                     String lock=row.getCell(9).getStringCellValue();
                     user.setLock(lock);
+                    String buyRecordStr= row.getCell(10).getStringCellValue();
+                    if(buyRecordStr!=null) {
+                        String[] buyRecordArray = buyRecordStr.split(",");
+                        List<String> buyRecord = new ArrayList<>(Arrays.asList(buyRecordArray));
+                        user.setBuyRecord(buyRecord);
+                    }
+                    String buyTimeRecordStr= row.getCell(11).getStringCellValue();
+                    if(buyTimeRecordStr!=null) {
+                        String[] buyTimeRecordArray = buyTimeRecordStr.split(",");
+                        List<String> buyTimeRecord = new ArrayList<>(Arrays.asList(buyTimeRecordArray));
+                        user.setBuyTimeRecord(buyTimeRecord);
+                    }
                     return user;
                 }
             }
@@ -287,6 +325,18 @@ public class UserDataExalDAO implements UserDAO {
                 user.setPurchaseNumber(purchaseNumber);
                 String lock=row.getCell(9).getStringCellValue();
                 user.setLock(lock);
+                String buyRecordStr= row.getCell(10).getStringCellValue();
+                if(buyRecordStr!=null) {
+                    String[] buyRecordArray = buyRecordStr.split(",");
+                    List<String> buyRecord = new ArrayList<>(Arrays.asList(buyRecordArray));
+                    user.setBuyRecord(buyRecord);
+                }
+                String buyTimeRecordStr= row.getCell(11).getStringCellValue();
+                if(buyTimeRecordStr!=null) {
+                    String[] buyTimeRecordArray = buyTimeRecordStr.split(",");
+                    List<String> buyTimeRecord = new ArrayList<>(Arrays.asList(buyTimeRecordArray));
+                    user.setBuyTimeRecord(buyTimeRecord);
+                }
                 list.add(user);
             }
             fileInputStream.close();
@@ -311,6 +361,8 @@ public class UserDataExalDAO implements UserDAO {
             headerRow.createCell(7).setCellValue("购买金额");
             headerRow.createCell(8).setCellValue("购买次数 ");
             headerRow.createCell(9).setCellValue("登录锁定");
+            headerRow.createCell(10).setCellValue("购买记录 ");
+            headerRow.createCell(11).setCellValue("购买时间");
             FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
             workbook.write(fileOutputStream);
             fileOutputStream.close();

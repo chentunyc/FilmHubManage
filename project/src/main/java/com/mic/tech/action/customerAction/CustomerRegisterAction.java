@@ -39,9 +39,9 @@ public class CustomerRegisterAction extends AbstractAuthenticatedAction {
             boolean verifyTelephoneNumber=false;
             super.print("请输入用户名,用户名需要大于或等于5个字符：");
             userName=scanner.nextLine();
-            while (userName.length()<5||list.contains(userService.getUserByUserName(userName))) {
+            while (userName.length()<5||userService.getUserByUserName(userName)!=null) {
+                super.println("用户名不能重复");
                 super.print("请输入用户名,用户名需要大于或等于5个字符：");
-                super.print("用户名不能重复");
                 userName=scanner.nextLine();
             }
             user.setUsername(userName);

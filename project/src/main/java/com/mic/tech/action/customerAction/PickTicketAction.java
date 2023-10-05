@@ -29,7 +29,7 @@ public class PickTicketAction extends AbstractAuthenticatedAction {
     }
     public void perform() {
         Role currentRole=state.getUserRole();
-        if (currentRole==Role.RECEPTIONIST||currentRole==Role.BRONZE_CUSTOMER||currentRole==Role.SILVER_CUSTOMER) {
+        if (currentRole==Role.GOLD_CUSTOMER||currentRole==Role.BRONZE_CUSTOMER||currentRole==Role.SILVER_CUSTOMER) {
             User user=userService.getUserByUserName(state.getUserName());
             user.getBuyRecord();
             super.print("请输入号码:");
@@ -38,7 +38,7 @@ public class PickTicketAction extends AbstractAuthenticatedAction {
             for(int i=0;i<7;i++) {
                 for (int j = 0; j < 12; j++) {
                     if(plat.getIsPutoutBySeat(i,j).equals("hasBuied")&&plat.getTicketIDBySeat(i,j).equals(ticketId)){
-                        System.out.printf("%-13s %-5s %-15s %-3s", "screeningHall", "time", "title", "duration");
+                        System.out.printf("%-13s %-13s %-15s %-3s", "screeningHall", "time", "title", "duration");
                         System.out.println();
                         String screeningHall=plat.getScreeningHall();
                         String time=plat.getTime();
@@ -49,10 +49,11 @@ public class PickTicketAction extends AbstractAuthenticatedAction {
                             title = film.getTitle();
                             duration = film.getDuration();
                         }
-                        System.out.printf("%-13s %-5s %-15s %-3s", screeningHall, time, title, duration);
+                        System.out.printf("%-13s %-13s %-15s %-3s", screeningHall, time, title, duration);
                         System.out.println();
                         System.out.println("座位"+"x"+i+"y"+j);
                         plat.setIsPutoutBySeat(i,j,"hasTaken");
+                        platService.updatePlat(plat,plat.getTime());
                     }
                     else if(plat.getIsPutoutBySeat(i,j).equals("hasTaken")&&plat.getTicketIDBySeat(i,j).equals(ticketId)){
                         super.println("票已经被取走，票只能取一次");

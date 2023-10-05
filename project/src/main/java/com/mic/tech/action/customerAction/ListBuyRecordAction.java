@@ -37,7 +37,7 @@ public class ListBuyRecordAction extends AbstractAuthenticatedAction {
                 String ticketId = list0.get(x).toString();
                 Plat plat = platService.getPlatByTicketId(ticketId);
                 if(plat!=null) {
-                    System.out.printf("%-13s %-5s %-15s %-3s", "screeningHall", "time", "title", "duration");
+                    System.out.printf("%-13s %-13s %-15s %-3s", "screeningHall", "time", "title", "duration");
                     System.out.println();
                     String screeningHall = plat.getScreeningHall();
                     String time = plat.getTime();
@@ -48,7 +48,7 @@ public class ListBuyRecordAction extends AbstractAuthenticatedAction {
                         title = film.getTitle();
                         duration = film.getDuration();
                     }
-                    System.out.printf("%-13s %-5s %-15s %-3s", screeningHall, time, title, duration);
+                    System.out.printf("%-13s %-13s %-15s %-3s", screeningHall, time, title, duration);
                     System.out.println();
                     System.out.println("id:"+list0.get(x).toString()+" "+"time:"+ list1.get(x).toString());
                 }

@@ -37,7 +37,7 @@ public class PlatAddAction extends AbstractAuthenticatedAction {
             String filmTitle=scanner.nextLine();
             super.print("请输入排片放映厅");
             String screenHall = scanner.nextLine();
-            super.print("请输入排片时间段");
+            super.print("请输入排片时间段（注意输入格式yyyyMMddHHmm）");
             String time = scanner.nextLine();
             super.print("请输入排片的价格");
             double price = scanner.nextDouble();

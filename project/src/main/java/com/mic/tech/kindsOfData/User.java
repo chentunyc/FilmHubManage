@@ -33,15 +33,12 @@ public class User {
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password=hashPassword(password);
     }
@@ -51,7 +48,6 @@ public class User {
     public Role getRole() {
         return role;
     }
-
     public void setRole(Role role) {
         this.role = role;
     }
@@ -74,14 +70,12 @@ public class User {
     public String getEmail(){
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
     public void setPurchaseNumber(int purchaseNumber){
         this.purchaseNumber=purchaseNumber;
     }
-
     public int getPurchaseNumber() {
         return purchaseNumber;
     }
@@ -103,10 +97,16 @@ public class User {
     public void addBuyTimeRecord(String record){
         buyTimeRecord.add(record);
     }
+    public void setBuyRecord(List<String> buyRecord) {
+        this.buyRecord = buyRecord;
+    }
+
+    public void setBuyTimeRecord(List<String> buyTimeRecord) {
+        this.buyTimeRecord = buyTimeRecord;
+    }
     public void setLock(String lock){
         this.lock=lock;
     }
-
     public String getLock() {
         return lock;
     }

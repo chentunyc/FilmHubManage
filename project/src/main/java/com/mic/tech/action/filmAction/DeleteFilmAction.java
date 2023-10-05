@@ -30,7 +30,7 @@ public class DeleteFilmAction extends AbstractAuthenticatedAction {
             String title = scanner.nextLine();
             Film film = filmService.getFilmByFilmTitle(title);
             if (film != null) {
-                super.println("删除后无法恢复，请用户确认是否继续删除操作。y/n");
+                super.print("删除后无法恢复，请用户确认是否继续删除操作。y/n");
                 String s=scanner.nextLine();
                 if(s.equals("y"))
                     filmService.deleteFilm(title);

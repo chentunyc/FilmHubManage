@@ -60,7 +60,7 @@ public class PlatDataExalDAO implements PlatDAO {
             Iterator<Row> rowIterator = sheet.iterator();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
-                String timeN = row.getCell(3).getStringCellValue();
+                String timeN = row.getCell(2).getStringCellValue();
                 if (timeN.equals(time)) {
                     row.getCell(0).setCellValue(plat.getScreeningHall());
                     row.getCell(1).setCellValue(String.valueOf(plat.getPrice()));
